@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Page View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="HomePageViewController" customModule="CatchPhrase" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,108 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catch Phrase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHm-jI-qUN">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="70"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjU-Ud-vjs">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62E-JC-WYs">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Ekk-mG-014"/>
+                                    <constraint firstAttribute="height" constant="60" id="SUC-fm-pKv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Rules">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ekk-mG-014"/>
+                                        <exclude reference="SUC-fm-pKv"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ekk-mG-014"/>
+                                        <include reference="SUC-fm-pKv"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LjU-Ud-vjs" firstAttribute="height" secondItem="62E-JC-WYs" secondAttribute="height" id="2Ft-Ys-vYA"/>
+                            <constraint firstItem="62E-JC-WYs" firstAttribute="top" secondItem="SHm-jI-qUN" secondAttribute="bottom" constant="139" id="2aT-7f-14n"/>
+                            <constraint firstAttribute="centerX" secondItem="62E-JC-WYs" secondAttribute="centerX" id="cj1-PO-Gir"/>
+                            <constraint firstItem="LjU-Ud-vjs" firstAttribute="top" secondItem="62E-JC-WYs" secondAttribute="bottom" constant="41" id="gIG-h3-KHw"/>
+                            <constraint firstAttribute="centerX" secondItem="LjU-Ud-vjs" secondAttribute="centerX" id="kfu-kG-IXE"/>
+                            <constraint firstItem="LjU-Ud-vjs" firstAttribute="width" secondItem="62E-JC-WYs" secondAttribute="width" id="nM9-ge-OGo"/>
+                            <constraint firstItem="SHm-jI-qUN" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="42" id="odd-JD-pYm"/>
+                            <constraint firstAttribute="centerX" secondItem="SHm-jI-qUN" secondAttribute="centerX" constant="-0.5" id="q8j-uu-eGd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="SHm-jI-qUN"/>
+                                <exclude reference="LjU-Ud-vjs"/>
+                                <exclude reference="62E-JC-WYs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="odd-JD-pYm"/>
+                                <exclude reference="q8j-uu-eGd"/>
+                                <exclude reference="2aT-7f-14n"/>
+                                <exclude reference="cj1-PO-Gir"/>
+                                <exclude reference="2Ft-Ys-vYA"/>
+                                <exclude reference="gIG-h3-KHw"/>
+                                <exclude reference="kfu-kG-IXE"/>
+                                <exclude reference="nM9-ge-OGo"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="SHm-jI-qUN"/>
+                                <include reference="LjU-Ud-vjs"/>
+                                <include reference="62E-JC-WYs"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="odd-JD-pYm"/>
+                                <include reference="q8j-uu-eGd"/>
+                                <include reference="2aT-7f-14n"/>
+                                <include reference="cj1-PO-Gir"/>
+                                <include reference="2Ft-Ys-vYA"/>
+                                <include reference="gIG-h3-KHw"/>
+                                <include reference="kfu-kG-IXE"/>
+                                <include reference="nM9-ge-OGo"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="439.5" y="349"/>
         </scene>
     </scenes>
 </document>
