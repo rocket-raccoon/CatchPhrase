@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vwL-b5-92A">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Home Page View Controller-->
+        <!--Home Page-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="HomePageViewController" customModule="CatchPhrase" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,6 +65,9 @@
                                         <include reference="SUC-fm-pKv"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="82Z-51-eyc" kind="show" id="Rss-po-K5q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -113,8 +116,71 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Home Page" id="mDg-sn-3dH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357.5" y="349"/>
+        </scene>
+        <!--Rules Page View Controller-->
+        <scene sceneID="nH9-32-iLZ">
+            <objects>
+                <viewController id="82Z-51-eyc" customClass="RulesPageViewController" customModule="CatchPhrase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RaL-3u-MKL"/>
+                        <viewControllerLayoutGuide type="bottom" id="mk3-LU-hzk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Ya-gH-te4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yS7-TH-nMh">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">1. Have everyone divide up into two teams. It’s best to alternate players in a circle so each player is next to a member of the other team. Each player needs to be able to pass the Catch Phrase game unit to a member of the other team as quickly as possible.
+2. Pick a team to start (that will be Team 1) and a player on that team to go first. Give the Catch Phrase game unit to that player.
+3.  A phrase will show up on screen.  Only the current player holding the phone may see it.  They may describe the phrase to the rest of their team in any way without actually saying any of the words in the phrase.  If a team member correctly guesses the phrase, the current person will pass the phone to the next person on the other team.
+4.  This will keep going until the buzzer goes off.  If the buzzer goes off, the opposing team of the current player holding the phone gains a point.  In addition, the opposing team will have an opportunity to guess the phrase.  If they guess the phrase correctly, they gain an additional point.
+5.  The team with the most points at the end of all the rounds wins!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="7" y="72" width="377" height="432"/>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="yS7-TH-nMh"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="yS7-TH-nMh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dk-79-3XX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2208" y="349"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F6l-DK-0uE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwL-b5-92A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vX2-cV-uEt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="KEK-Ws-rz7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qr-7q-DbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="439.5" y="349"/>
         </scene>
