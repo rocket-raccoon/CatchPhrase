@@ -19,7 +19,14 @@ class HomePageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "startGame") {
+            var phraseBank = PhraseBank()
+            var gameVC = segue.destinationViewController as GuessRoundViewController
+            gameVC.phraseBank = phraseBank
+        }
+    }
 
 }
 

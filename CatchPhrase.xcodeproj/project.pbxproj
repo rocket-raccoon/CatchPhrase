@@ -15,6 +15,7 @@
 		2DD3C2191A4DF2AE00257FF8 /* CatchPhraseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2181A4DF2AE00257FF8 /* CatchPhraseTests.swift */; };
 		2DD3C2231A4DFB4500257FF8 /* RulesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2221A4DFB4500257FF8 /* RulesPageViewController.swift */; };
 		2DD3C2251A4E919200257FF8 /* GuessRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2241A4E919200257FF8 /* GuessRoundViewController.swift */; };
+		2DD3C2291A4F3CD800257FF8 /* PhraseBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2281A4F3CD800257FF8 /* PhraseBank.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		2DD3C2181A4DF2AE00257FF8 /* CatchPhraseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchPhraseTests.swift; sourceTree = "<group>"; };
 		2DD3C2221A4DFB4500257FF8 /* RulesPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesPageViewController.swift; sourceTree = "<group>"; };
 		2DD3C2241A4E919200257FF8 /* GuessRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessRoundViewController.swift; sourceTree = "<group>"; };
+		2DD3C2281A4F3CD800257FF8 /* PhraseBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseBank.swift; path = ../PhraseBank.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		2DD3C1FF1A4DF2AE00257FF8 /* CatchPhrase */ = {
 			isa = PBXGroup;
 			children = (
+				2DD3C2281A4F3CD800257FF8 /* PhraseBank.swift */,
 				2DD3C2021A4DF2AE00257FF8 /* AppDelegate.swift */,
 				2DD3C2041A4DF2AE00257FF8 /* HomePageViewController.swift */,
 				2DD3C2061A4DF2AE00257FF8 /* Main.storyboard */,
@@ -221,6 +224,7 @@
 				2DD3C2051A4DF2AE00257FF8 /* HomePageViewController.swift in Sources */,
 				2DD3C2231A4DFB4500257FF8 /* RulesPageViewController.swift in Sources */,
 				2DD3C2031A4DF2AE00257FF8 /* AppDelegate.swift in Sources */,
+				2DD3C2291A4F3CD800257FF8 /* PhraseBank.swift in Sources */,
 				2DD3C2251A4E919200257FF8 /* GuessRoundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
