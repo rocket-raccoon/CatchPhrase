@@ -9,7 +9,10 @@
 import UIKit
 
 class EndRoundViewController: UIViewController {
-
+    
+    var phraseBank:PhraseBank!
+    var scoreKeeper:ScoreKeeper!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

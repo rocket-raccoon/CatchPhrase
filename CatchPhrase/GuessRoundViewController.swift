@@ -57,6 +57,14 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "endRound") {
+            var endRoundVC = segue.destinationViewController as EndRoundViewController
+            endRoundVC.phraseBank = phraseBank
+            endRoundVC.scoreKeeper = scoreKeeper
+        }
+    }
+    
 }
 
 

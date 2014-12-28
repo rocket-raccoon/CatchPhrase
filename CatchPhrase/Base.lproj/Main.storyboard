@@ -349,7 +349,118 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Mrg-JV-ltw">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round is Over!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQi-h1-VHi">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhB-ok-pg6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Team1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="70" y="488" width="46" height="30"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-Vt-nzR">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="y9c-w3-S8U"/>
+                                    <constraint firstAttribute="width" constant="140" id="yXB-Nh-qFl"/>
+                                </constraints>
+                                <state key="normal" title="Team2">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="y9c-w3-S8U"/>
+                                        <exclude reference="yXB-Nh-qFl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="y9c-w3-S8U"/>
+                                        <include reference="yXB-Nh-qFl"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which team scored?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPn-Wn-P0p">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qQi-h1-VHi" firstAttribute="top" secondItem="NhM-Ib-tyV" secondAttribute="bottom" constant="47" id="2ub-6z-LEM"/>
+                            <constraint firstItem="YUv-Vt-nzR" firstAttribute="height" secondItem="OhB-ok-pg6" secondAttribute="height" id="5qn-kr-ZSu"/>
+                            <constraint firstAttribute="centerX" secondItem="OPn-Wn-P0p" secondAttribute="centerX" id="6xd-a3-8o8"/>
+                            <constraint firstItem="YUv-Vt-nzR" firstAttribute="width" secondItem="OhB-ok-pg6" secondAttribute="width" id="8Pn-eG-1oC"/>
+                            <constraint firstItem="OPn-Wn-P0p" firstAttribute="top" secondItem="qQi-h1-VHi" secondAttribute="bottom" constant="46.5" id="BOP-3G-d8y"/>
+                            <constraint firstItem="kgh-VQ-biH" firstAttribute="top" secondItem="YUv-Vt-nzR" secondAttribute="bottom" constant="30" id="CSi-l7-3Zf"/>
+                            <constraint firstItem="OhB-ok-pg6" firstAttribute="leading" secondItem="Mrg-JV-ltw" secondAttribute="leadingMargin" constant="20" id="DtS-5b-HvD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YUv-Vt-nzR" secondAttribute="trailing" constant="20" id="QLq-Yh-7aV"/>
+                            <constraint firstAttribute="centerX" secondItem="qQi-h1-VHi" secondAttribute="centerX" id="b0L-4s-HWB"/>
+                            <constraint firstItem="kgh-VQ-biH" firstAttribute="top" secondItem="OhB-ok-pg6" secondAttribute="bottom" constant="30" id="gYE-Ek-SJ3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="qQi-h1-VHi"/>
+                                <exclude reference="OhB-ok-pg6"/>
+                                <exclude reference="YUv-Vt-nzR"/>
+                                <exclude reference="OPn-Wn-P0p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2ub-6z-LEM"/>
+                                <exclude reference="b0L-4s-HWB"/>
+                                <exclude reference="6xd-a3-8o8"/>
+                                <exclude reference="BOP-3G-d8y"/>
+                                <exclude reference="5qn-kr-ZSu"/>
+                                <exclude reference="8Pn-eG-1oC"/>
+                                <exclude reference="QLq-Yh-7aV"/>
+                                <exclude reference="DtS-5b-HvD"/>
+                                <exclude reference="CSi-l7-3Zf"/>
+                                <exclude reference="gYE-Ek-SJ3"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="qQi-h1-VHi"/>
+                                <include reference="OhB-ok-pg6"/>
+                                <include reference="YUv-Vt-nzR"/>
+                                <include reference="OPn-Wn-P0p"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2ub-6z-LEM"/>
+                                <include reference="b0L-4s-HWB"/>
+                                <include reference="6xd-a3-8o8"/>
+                                <include reference="BOP-3G-d8y"/>
+                                <include reference="5qn-kr-ZSu"/>
+                                <include reference="8Pn-eG-1oC"/>
+                                <include reference="QLq-Yh-7aV"/>
+                                <include reference="DtS-5b-HvD"/>
+                                <include reference="CSi-l7-3Zf"/>
+                                <include reference="gYE-Ek-SJ3"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EoO-MS-Kej" userLabel="First Responder" sceneMemberID="firstResponder"/>
