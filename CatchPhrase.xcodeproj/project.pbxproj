@@ -16,6 +16,9 @@
 		2DD3C2231A4DFB4500257FF8 /* RulesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2221A4DFB4500257FF8 /* RulesPageViewController.swift */; };
 		2DD3C2251A4E919200257FF8 /* GuessRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2241A4E919200257FF8 /* GuessRoundViewController.swift */; };
 		2DD3C2291A4F3CD800257FF8 /* PhraseBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2281A4F3CD800257FF8 /* PhraseBank.swift */; };
+		2DD3C22B1A4F6DF900257FF8 /* ScoreKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C22A1A4F6DF900257FF8 /* ScoreKeeper.swift */; };
+		2DD3C22D1A4F79E700257FF8 /* countdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C22C1A4F79E700257FF8 /* countdown.mp3 */; };
+		2DD3C22F1A4F906A00257FF8 /* EndRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C22E1A4F906A00257FF8 /* EndRoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		2DD3C2221A4DFB4500257FF8 /* RulesPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesPageViewController.swift; sourceTree = "<group>"; };
 		2DD3C2241A4E919200257FF8 /* GuessRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessRoundViewController.swift; sourceTree = "<group>"; };
 		2DD3C2281A4F3CD800257FF8 /* PhraseBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhraseBank.swift; path = ../PhraseBank.swift; sourceTree = "<group>"; };
+		2DD3C22A1A4F6DF900257FF8 /* ScoreKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreKeeper.swift; sourceTree = "<group>"; };
+		2DD3C22C1A4F79E700257FF8 /* countdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countdown.mp3; sourceTree = "<group>"; };
+		2DD3C22E1A4F906A00257FF8 /* EndRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndRoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +93,9 @@
 				2DD3C2021A4DF2AE00257FF8 /* AppDelegate.swift */,
 				2DD3C2041A4DF2AE00257FF8 /* HomePageViewController.swift */,
 				2DD3C2061A4DF2AE00257FF8 /* Main.storyboard */,
+				2DD3C22A1A4F6DF900257FF8 /* ScoreKeeper.swift */,
 				2DD3C2241A4E919200257FF8 /* GuessRoundViewController.swift */,
+				2DD3C22E1A4F906A00257FF8 /* EndRoundViewController.swift */,
 				2DD3C2221A4DFB4500257FF8 /* RulesPageViewController.swift */,
 				2DD3C2091A4DF2AE00257FF8 /* Images.xcassets */,
 				2DD3C20B1A4DF2AE00257FF8 /* LaunchScreen.xib */,
@@ -99,6 +107,7 @@
 		2DD3C2001A4DF2AE00257FF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DD3C22C1A4F79E700257FF8 /* countdown.mp3 */,
 				2DD3C2011A4DF2AE00257FF8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -201,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD3C22D1A4F79E700257FF8 /* countdown.mp3 in Resources */,
 				2DD3C2081A4DF2AE00257FF8 /* Main.storyboard in Resources */,
 				2DD3C20D1A4DF2AE00257FF8 /* LaunchScreen.xib in Resources */,
 				2DD3C20A1A4DF2AE00257FF8 /* Images.xcassets in Resources */,
@@ -221,11 +231,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD3C22B1A4F6DF900257FF8 /* ScoreKeeper.swift in Sources */,
 				2DD3C2051A4DF2AE00257FF8 /* HomePageViewController.swift in Sources */,
 				2DD3C2231A4DFB4500257FF8 /* RulesPageViewController.swift in Sources */,
 				2DD3C2031A4DF2AE00257FF8 /* AppDelegate.swift in Sources */,
 				2DD3C2291A4F3CD800257FF8 /* PhraseBank.swift in Sources */,
 				2DD3C2251A4E919200257FF8 /* GuessRoundViewController.swift in Sources */,
+				2DD3C22F1A4F906A00257FF8 /* EndRoundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

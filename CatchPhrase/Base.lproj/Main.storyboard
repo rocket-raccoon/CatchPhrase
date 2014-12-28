@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vwL-b5-92A">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -179,6 +180,7 @@
                         <viewControllerLayoutGuide type="bottom" id="eQb-gj-gtf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XLE-2d-RFU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47X-Cc-D0K">
@@ -192,9 +194,6 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="29" y="414" width="160" height="148"/>
-                                </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktY-1h-gzL">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -235,16 +234,46 @@
                                 <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="162" y="201" width="74" height="46"/>
-                                </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srL-Ez-5Yj">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="d6Y-QR-dXz"/>
+                                    <constraint firstAttribute="width" constant="348" id="dJi-kr-i80"/>
+                                </constraints>
+                                <state key="normal" title="Pause/Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="d6Y-QR-dXz"/>
+                                        <exclude reference="dJi-kr-i80"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="d6Y-QR-dXz"/>
+                                        <include reference="dJi-kr-i80"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="pauseCountdown:" destination="8sn-tQ-Og8" eventType="touchUpInside" id="E9i-ha-CZZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="VTw-1f-uXt" secondAttribute="centerX" id="5MF-gt-LAK"/>
                             <constraint firstItem="eQb-gj-gtf" firstAttribute="top" secondItem="ktY-1h-gzL" secondAttribute="bottom" constant="40" id="5b9-yp-5pg"/>
                             <constraint firstItem="47X-Cc-D0K" firstAttribute="leading" secondItem="XLE-2d-RFU" secondAttribute="leadingMargin" constant="10" id="96R-2j-cFy"/>
+                            <constraint firstAttribute="centerX" secondItem="srL-Ez-5Yj" secondAttribute="centerX" id="H7v-h3-TGQ"/>
+                            <constraint firstItem="47X-Cc-D0K" firstAttribute="top" secondItem="srL-Ez-5Yj" secondAttribute="bottom" constant="23" id="MeW-WS-ZIw"/>
                             <constraint firstItem="eQb-gj-gtf" firstAttribute="top" secondItem="47X-Cc-D0K" secondAttribute="bottom" constant="40" id="aQC-9Y-tJf"/>
                             <constraint firstAttribute="centerX" secondItem="n2y-MV-vpR" secondAttribute="centerX" constant="-0.5" id="aiD-13-e73"/>
                             <constraint firstItem="VTw-1f-uXt" firstAttribute="top" secondItem="n2y-MV-vpR" secondAttribute="bottom" constant="48" id="eTs-x6-eeU"/>
@@ -259,13 +288,16 @@
                                 <exclude reference="ktY-1h-gzL"/>
                                 <exclude reference="n2y-MV-vpR"/>
                                 <exclude reference="VTw-1f-uXt"/>
+                                <exclude reference="srL-Ez-5Yj"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="aiD-13-e73"/>
                                 <exclude reference="q2C-vt-owi"/>
                                 <exclude reference="5MF-gt-LAK"/>
                                 <exclude reference="eTs-x6-eeU"/>
+                                <exclude reference="H7v-h3-TGQ"/>
                                 <exclude reference="96R-2j-cFy"/>
+                                <exclude reference="MeW-WS-ZIw"/>
                                 <exclude reference="oKh-xF-GmS"/>
                                 <exclude reference="qq1-Xk-pDs"/>
                                 <exclude reference="sLs-gW-27w"/>
@@ -279,13 +311,16 @@
                                 <include reference="ktY-1h-gzL"/>
                                 <include reference="n2y-MV-vpR"/>
                                 <include reference="VTw-1f-uXt"/>
+                                <include reference="srL-Ez-5Yj"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="aiD-13-e73"/>
                                 <include reference="q2C-vt-owi"/>
                                 <include reference="5MF-gt-LAK"/>
                                 <include reference="eTs-x6-eeU"/>
+                                <include reference="H7v-h3-TGQ"/>
                                 <include reference="96R-2j-cFy"/>
+                                <include reference="MeW-WS-ZIw"/>
                                 <include reference="oKh-xF-GmS"/>
                                 <include reference="qq1-Xk-pDs"/>
                                 <include reference="sLs-gW-27w"/>
@@ -295,12 +330,31 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="pauseButton" destination="srL-Ez-5Yj" id="rd5-B9-8hw"/>
                         <outlet property="phraseTextView" destination="VTw-1f-uXt" id="8kL-Bh-qJk"/>
+                        <segue destination="tYv-ts-rvR" kind="show" identifier="endRound" id="B0l-Gi-NoI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC7-Hy-OK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2208" y="1069"/>
+        </scene>
+        <!--End Round View Controller-->
+        <scene sceneID="Av2-jm-GzG">
+            <objects>
+                <viewController id="tYv-ts-rvR" customClass="EndRoundViewController" customModule="CatchPhrase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NhM-Ib-tyV"/>
+                        <viewControllerLayoutGuide type="bottom" id="kgh-VQ-biH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mrg-JV-ltw">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EoO-MS-Kej" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2973" y="1065"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F6l-DK-0uE">
@@ -329,6 +383,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZWm-fX-XAJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ibk-KG-yk4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

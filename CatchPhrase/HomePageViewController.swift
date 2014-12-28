@@ -23,8 +23,10 @@ class HomePageViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "startGame") {
             var phraseBank = PhraseBank()
+            var scoreKeeper = ScoreKeeper()
             var gameVC = segue.destinationViewController as GuessRoundViewController
             gameVC.phraseBank = phraseBank
+            gameVC.scoreKeeper = scoreKeeper
         }
     }
 
