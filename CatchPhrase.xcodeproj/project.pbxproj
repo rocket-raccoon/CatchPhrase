@@ -21,6 +21,7 @@
 		2DD3C22F1A4F906A00257FF8 /* EndRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C22E1A4F906A00257FF8 /* EndRoundViewController.swift */; };
 		2DD3C2311A50E9CF00257FF8 /* RebuttalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2301A50E9CF00257FF8 /* RebuttalViewController.swift */; };
 		2DD3C2331A50EE7B00257FF8 /* CurrentStandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2321A50EE7B00257FF8 /* CurrentStandingsViewController.swift */; };
+		2DD3C2351A513ACF00257FF8 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2341A513ACF00257FF8 /* EndGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		2DD3C22E1A4F906A00257FF8 /* EndRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndRoundViewController.swift; sourceTree = "<group>"; };
 		2DD3C2301A50E9CF00257FF8 /* RebuttalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RebuttalViewController.swift; sourceTree = "<group>"; };
 		2DD3C2321A50EE7B00257FF8 /* CurrentStandingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentStandingsViewController.swift; sourceTree = "<group>"; };
+		2DD3C2341A513ACF00257FF8 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				2DD3C2041A4DF2AE00257FF8 /* HomePageViewController.swift */,
 				2DD3C2061A4DF2AE00257FF8 /* Main.storyboard */,
 				2DD3C2321A50EE7B00257FF8 /* CurrentStandingsViewController.swift */,
+				2DD3C2341A513ACF00257FF8 /* EndGameViewController.swift */,
 				2DD3C2301A50E9CF00257FF8 /* RebuttalViewController.swift */,
 				2DD3C22A1A4F6DF900257FF8 /* ScoreKeeper.swift */,
 				2DD3C2241A4E919200257FF8 /* GuessRoundViewController.swift */,
@@ -239,6 +242,7 @@
 			files = (
 				2DD3C22B1A4F6DF900257FF8 /* ScoreKeeper.swift in Sources */,
 				2DD3C2331A50EE7B00257FF8 /* CurrentStandingsViewController.swift in Sources */,
+				2DD3C2351A513ACF00257FF8 /* EndGameViewController.swift in Sources */,
 				2DD3C2311A50E9CF00257FF8 /* RebuttalViewController.swift in Sources */,
 				2DD3C2051A4DF2AE00257FF8 /* HomePageViewController.swift in Sources */,
 				2DD3C2231A4DFB4500257FF8 /* RulesPageViewController.swift in Sources */,

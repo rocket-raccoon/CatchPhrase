@@ -77,6 +77,7 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func getNextPhrase(sender: UIButton) {
         let phrase = phraseBank.getNextPhrase()
         phraseTextView.text = phrase
+        scoreKeeper.curSkips = 0
     }
     
 }

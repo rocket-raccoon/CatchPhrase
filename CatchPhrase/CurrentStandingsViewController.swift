@@ -29,8 +29,12 @@ class CurrentStandingsViewController: UIViewController {
     }
     
     @IBAction func startNextRound(sender: UIButton) {
-        scoreKeeper.currentRound += 1
-        performSegueWithIdentifier("startNextRound", sender: nil)
+        if(scoreKeeper.currentRound != scoreKeeper.totalRounds) {
+            scoreKeeper.currentRound += 1
+            performSegueWithIdentifier("startNextRound", sender: nil)
+        } else {
+            performSegueWithIdentifier("endGame", sender: nil)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -38,6 +42,9 @@ class CurrentStandingsViewController: UIViewController {
             var roundVC = segue.destinationViewController as GuessRoundViewController
             roundVC.scoreKeeper = scoreKeeper
             roundVC.phraseBank = phraseBank
+        } else if (segue.identifier == "endGame") {
+            var endGameVC = segue.destinationViewController as EndGameViewController
+            endGameVC.scoreKeeper = scoreKeeper
         }
     }
     

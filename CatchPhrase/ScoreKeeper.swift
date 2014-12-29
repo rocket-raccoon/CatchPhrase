@@ -14,7 +14,7 @@ class ScoreKeeper {
     var team2Score = 0
     var prevWinner = 1
     var currentRound = 1
-    var totalRounds = 10
+    var totalRounds = 1
     var maxSkips = 3
     var curSkips = 0
     
