@@ -371,6 +371,9 @@
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="70" y="488" width="46" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="nameTeam1Winner:" destination="tYv-ts-rvR" eventType="touchUpInside" id="Am8-Ah-UbM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-Vt-nzR">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -400,6 +403,9 @@
                                         <include reference="yXB-Nh-qFl"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="nameTeam2Winner:" destination="tYv-ts-rvR" eventType="touchUpInside" id="etF-15-kdS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which team scored?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPn-Wn-P0p">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -462,10 +468,30 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="pju-Yx-D0Z" kind="show" identifier="goToRebuttal" id="ZOU-jO-vrB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EoO-MS-Kej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2973" y="1065"/>
+        </scene>
+        <!--Rebuttal View Controller-->
+        <scene sceneID="aFD-L6-euF">
+            <objects>
+                <viewController id="pju-Yx-D0Z" customClass="RebuttalViewController" customModule="CatchPhrase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BY3-aY-wd3"/>
+                        <viewControllerLayoutGuide type="bottom" id="R2R-cg-I8S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3a1-3R-AOY">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFh-Lq-Vx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3781.5" y="1063"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F6l-DK-0uE">
@@ -484,23 +510,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qr-7q-DbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="439.5" y="349"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="iZV-Ds-gtj">
-            <objects>
-                <viewController id="hcj-C0-120" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XG5-hv-MXN"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZWm-fX-XAJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ibk-KG-yk4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="74E-SZ-yAL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>
