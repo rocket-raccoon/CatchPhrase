@@ -64,7 +64,28 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
+    @IBAction func skipPhrase(sender: UIButton) {
+        if scoreKeeper.skipsLeft() {
+            let phrase = phraseBank.getNextPhrase()
+            phraseTextView.text = phrase
+        } else {
+            println("No more skips for this round")
+        }
+    }
+    
+    @IBAction func getNextPhrase(sender: UIButton) {
+        let phrase = phraseBank.getNextPhrase()
+        phraseTextView.text = phrase
+    }
+    
 }
+
+
+
+
+
+
+
 
 
 

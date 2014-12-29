@@ -194,6 +194,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="skipPhrase:" destination="8sn-tQ-Og8" eventType="touchUpInside" id="RDi-GL-YfK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktY-1h-gzL">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -222,6 +225,10 @@
                                         <include reference="kVA-bt-EGw"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="getNextPhrase:" destination="8sn-tQ-Og8" eventType="touchUpInside" id="Mqz-0X-9u2"/>
+                                    <action selector="nextPhrase:" destination="8sn-tQ-Og8" eventType="touchUpInside" id="MVx-zO-ZVS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current phrase is:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-MV-vpR">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
