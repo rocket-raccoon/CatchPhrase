@@ -13,6 +13,10 @@ class ScoreKeeper {
     var team1Score = 0
     var team2Score = 0
     var prevWinner = 1
+    var currentRound = 1
+    var totalRounds = 10
+    var maxSkips = 3
+    var curSkips = 0
     
     func incrementTeam1Score() {
         self.team1Score += 1
@@ -30,6 +34,13 @@ class ScoreKeeper {
         } else {
             self.team2Score += 1
         }
+    }
+    
+    func skipsLeft() -> Bool {
+        if (curSkips < maxSkips) {
+            return true
+        }
+        return false
     }
     
 }

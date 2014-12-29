@@ -31,7 +31,6 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
         audioPlayer.delegate = self
         audioPlayer.prepareToPlay()
         audioPlayer.play()
-        println("Audio starting to play")
     }
     
     override func didReceiveMemoryWarning() {

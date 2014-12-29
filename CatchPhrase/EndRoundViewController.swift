@@ -22,12 +22,12 @@ class EndRoundViewController: UIViewController {
     }
     
     @IBAction func nameTeam2Winner(sender: UIButton) {
-        scoreKeeper.incrementTeam1Score()
+        scoreKeeper.incrementTeam2Score()
         performSegueWithIdentifier("goToRebuttal", sender: nil)
     }
     
     @IBAction func nameTeam1Winner(sender: UIButton) {
-        scoreKeeper.incrementTeam2Score()
+        scoreKeeper.incrementTeam1Score()
         performSegueWithIdentifier("goToRebuttal", sender: nil)
     }
     
