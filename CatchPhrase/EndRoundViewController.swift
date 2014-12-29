@@ -31,4 +31,11 @@ class EndRoundViewController: UIViewController {
         performSegueWithIdentifier("goToRebuttal", sender: nil)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "goToRebuttal") {
+            var rebuttalVC = segue.destinationViewController as RebuttalViewController
+            rebuttalVC.scoreKeeper = scoreKeeper
+            rebuttalVC.phraseBank = phraseBank
+        }
+    }
 }

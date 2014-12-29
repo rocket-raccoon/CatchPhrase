@@ -21,4 +21,21 @@ class RebuttalViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func addRebuttal(sender: UIButton) {
+        scoreKeeper.addRebuttal()
+        performSegueWithIdentifier("showCurrentStandings", sender: nil)
+    }
+    
+    @IBAction func dontAddRebuttal(sender: UIButton) {
+        performSegueWithIdentifier("showCurrentStandings", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showCurrentStandings") {
+            var standingsVC = segue.destinationViewController as CurrentStandingsViewController
+            standingsVC.scoreKeeper = scoreKeeper
+            standingsVC.phraseBank = phraseBank
+        }
+    }
+    
 }
