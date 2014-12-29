@@ -11,7 +11,7 @@ import Foundation
 class PhraseBank {
     
     //This array will store all of our potential phrases
-    var phraseArray = ["The Cat in the Hat", "Beauty and the Beast", "Hello World"]
+    var phraseArray = ["The Cat in the Hat", "Beauty and the Beast", "Hello World", "Young and Reckless", "Red Baron"]
     var copyPhraseArray:[String]!
     
     init() {

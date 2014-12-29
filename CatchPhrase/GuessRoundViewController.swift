@@ -68,6 +68,7 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
         if scoreKeeper.skipsLeft() {
             let phrase = phraseBank.getNextPhrase()
             phraseTextView.text = phrase
+            scoreKeeper.curSkips += 1
         } else {
             println("No more skips for this round")
         }
