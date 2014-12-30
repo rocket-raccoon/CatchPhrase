@@ -17,6 +17,8 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var phraseTextView: UILabel!
     @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var topView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,9 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
         audioPlayer.delegate = self
         audioPlayer.prepareToPlay()
         audioPlayer.play()
+        //Set the constraint for the bottom and top views programatically
+        //var proportionHeights:NSLayoutConstraint = NSLayoutConstraint(item: bottomView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: topView, attribute: NSLayoutAttribute.Height, multiplier: 1.5, constant: 0)
+        //self.view.addConstraint(proportionHeights)
     }
     
     override func didReceiveMemoryWarning() {
