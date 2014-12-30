@@ -1,0 +1,8 @@
+2)  Fix positioning of red button on timer screen
+3)  Fix color scheme throughout app
+4)  Fix green button on standings page
+5)  Change text of green button on standings page depending on if it's last round or not
+6)  Remove back button from screens.  Instead add tab item to exit game
+7)  Add category page before starting game
+8)  Add variable rount count instead of fixed round amount
+

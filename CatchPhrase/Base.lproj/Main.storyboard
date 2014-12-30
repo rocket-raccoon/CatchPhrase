@@ -139,30 +139,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to Play" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2I-8t-sio">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yS7-TH-nMh">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">1. Have everyone divide up into two teams. It’s best to alternate players in a circle so each player is next to a member of the other team. Each player needs to be able to pass the Catch Phrase game unit to a member of the other team as quickly as possible.
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="KoK-be-jVR"/>
+                                    <constraint firstAttribute="width" constant="330" id="kdX-Vs-dEt"/>
+                                </constraints>
+                                <mutableString key="text">1.  Have everyone divide up into two teams. It’s best to alternate players in a circle so each player is next to a member of the other team.  Each player needs to be able to pass the Catch Phrase game unit to a member of the other team as quickly as possible.
 2. Pick a team to start (that will be Team 1) and a player on that team to go first. Give the Catch Phrase game unit to that player.
-3.  A phrase will show up on screen.  Only the current player holding the phone may see it.  They may describe the phrase to the rest of their team in any way without actually saying any of the words in the phrase.  If a team member correctly guesses the phrase, the current person will pass the phone to the next person on the other team.
-4.  This will keep going until the buzzer goes off.  If the buzzer goes off, the opposing team of the current player holding the phone gains a point.  In addition, the opposing team will have an opportunity to guess the phrase.  If they guess the phrase correctly, they gain an additional point.
-5.  The team with the most points at the end of all the rounds wins!</string>
+3.  A phrase will show up on screen.  Only the current player holding the phone may see it.  They may describe the phrase to the rest of their team in any way without actually saying any of the words in the phrase.  If a team member correctly guesses the phrase, the current person will pass the phone to the next person on the other team.  The current player may skip the current phrase up to 3 times if they so desire.
+4.  All of this will happen while a timer counts down.  If the buzzer goes off on the timer, the opposing team of the current player holding the phone gains a point.  In addition, the opposing team will have an opportunity to guess the phrase.  If they guess the phrase correctly, they gain an additional point as rebuttal.
+5.  The team with the most points at the end of all the rounds wins!</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="7" y="72" width="377" height="432"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KoK-be-jVR"/>
+                                        <exclude reference="kdX-Vs-dEt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="35" y="92" width="330" height="500"/>
+                                    <mask key="constraints">
+                                        <include reference="KoK-be-jVR"/>
+                                        <include reference="kdX-Vs-dEt"/>
+                                    </mask>
                                 </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u2I-8t-sio" firstAttribute="top" secondItem="RaL-3u-MKL" secondAttribute="bottom" constant="24" id="C8W-Vj-qRl"/>
+                            <constraint firstAttribute="centerX" secondItem="yS7-TH-nMh" secondAttribute="centerX" constant="8" id="amK-qg-rve"/>
+                            <constraint firstItem="yS7-TH-nMh" firstAttribute="top" secondItem="u2I-8t-sio" secondAttribute="bottom" constant="23" id="eFe-Cc-j6o"/>
+                            <constraint firstAttribute="centerX" secondItem="u2I-8t-sio" secondAttribute="centerX" constant="-0.5" id="kIU-Cw-wH7"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="u2I-8t-sio"/>
                                 <exclude reference="yS7-TH-nMh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="amK-qg-rve"/>
+                                <exclude reference="eFe-Cc-j6o"/>
+                                <exclude reference="C8W-Vj-qRl"/>
+                                <exclude reference="kIU-Cw-wH7"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="u2I-8t-sio"/>
                                 <include reference="yS7-TH-nMh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="amK-qg-rve"/>
+                                <include reference="eFe-Cc-j6o"/>
+                                <include reference="C8W-Vj-qRl"/>
+                                <include reference="kIU-Cw-wH7"/>
                             </mask>
                         </variation>
                     </view>
@@ -179,7 +219,7 @@
                         <viewControllerLayoutGuide type="top" id="P46-cT-8hR"/>
                         <viewControllerLayoutGuide type="bottom" id="eQb-gj-gtf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XLE-2d-RFU">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="XLE-2d-RFU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -229,18 +269,6 @@
                                     <action selector="getNextPhrase:" destination="8sn-tQ-Og8" eventType="touchUpInside" id="Mqz-0X-9u2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current phrase is:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-MV-vpR">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTw-1f-uXt">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srL-Ez-5Yj">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -272,19 +300,73 @@
                                     <action selector="pauseCountdown:" destination="8sn-tQ-Og8" eventType="touchUpInside" id="E9i-ha-CZZ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ev6-H9-DQr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your current phrase is:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2y-MV-vpR">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="88" y="55" width="172.5" height="20.5"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTw-1f-uXt">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="28"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="138" y="134" width="73.5" height="46"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="n2y-MV-vpR" firstAttribute="top" secondItem="ev6-H9-DQr" secondAttribute="top" constant="55" id="W93-X9-yMd"/>
+                                    <constraint firstAttribute="centerX" secondItem="VTw-1f-uXt" secondAttribute="centerX" constant="-0.75" id="fck-aW-y7j"/>
+                                    <constraint firstAttribute="centerX" secondItem="n2y-MV-vpR" secondAttribute="centerX" constant="-0.25" id="nKH-Km-LAw"/>
+                                    <constraint firstItem="VTw-1f-uXt" firstAttribute="top" secondItem="n2y-MV-vpR" secondAttribute="bottom" constant="58.5" id="pMB-40-wgA"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="n2y-MV-vpR"/>
+                                        <exclude reference="VTw-1f-uXt"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="W93-X9-yMd"/>
+                                        <exclude reference="nKH-Km-LAw"/>
+                                        <exclude reference="fck-aW-y7j"/>
+                                        <exclude reference="pMB-40-wgA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="26" y="38" width="348" height="240"/>
+                                    <mask key="subviews">
+                                        <include reference="n2y-MV-vpR"/>
+                                        <include reference="VTw-1f-uXt"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="W93-X9-yMd"/>
+                                        <include reference="nKH-Km-LAw"/>
+                                        <include reference="fck-aW-y7j"/>
+                                        <include reference="pMB-40-wgA"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="VTw-1f-uXt" secondAttribute="centerX" id="5MF-gt-LAK"/>
                             <constraint firstItem="eQb-gj-gtf" firstAttribute="top" secondItem="ktY-1h-gzL" secondAttribute="bottom" constant="40" id="5b9-yp-5pg"/>
                             <constraint firstItem="47X-Cc-D0K" firstAttribute="leading" secondItem="XLE-2d-RFU" secondAttribute="leadingMargin" constant="10" id="96R-2j-cFy"/>
                             <constraint firstAttribute="centerX" secondItem="srL-Ez-5Yj" secondAttribute="centerX" id="H7v-h3-TGQ"/>
                             <constraint firstItem="47X-Cc-D0K" firstAttribute="top" secondItem="srL-Ez-5Yj" secondAttribute="bottom" constant="23" id="MeW-WS-ZIw"/>
+                            <constraint firstAttribute="centerX" secondItem="ev6-H9-DQr" secondAttribute="centerX" id="O8a-D3-U1k"/>
+                            <constraint firstItem="ev6-H9-DQr" firstAttribute="width" secondItem="XLE-2d-RFU" secondAttribute="width" id="ZOi-wD-Eua"/>
                             <constraint firstItem="eQb-gj-gtf" firstAttribute="top" secondItem="47X-Cc-D0K" secondAttribute="bottom" constant="40" id="aQC-9Y-tJf"/>
-                            <constraint firstAttribute="centerX" secondItem="n2y-MV-vpR" secondAttribute="centerX" constant="-0.5" id="aiD-13-e73"/>
-                            <constraint firstItem="VTw-1f-uXt" firstAttribute="top" secondItem="n2y-MV-vpR" secondAttribute="bottom" constant="48" id="eTs-x6-eeU"/>
+                            <constraint firstItem="ev6-H9-DQr" firstAttribute="top" secondItem="P46-cT-8hR" secondAttribute="bottom" constant="18" id="m0Y-yS-Hvr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ktY-1h-gzL" secondAttribute="trailing" constant="10" id="oKh-xF-GmS"/>
-                            <constraint firstItem="n2y-MV-vpR" firstAttribute="top" secondItem="P46-cT-8hR" secondAttribute="bottom" constant="69" id="q2C-vt-owi"/>
                             <constraint firstItem="ktY-1h-gzL" firstAttribute="width" secondItem="47X-Cc-D0K" secondAttribute="width" id="qq1-Xk-pDs"/>
                             <constraint firstItem="ktY-1h-gzL" firstAttribute="height" secondItem="47X-Cc-D0K" secondAttribute="height" id="sLs-gW-27w"/>
                         </constraints>
@@ -292,15 +374,13 @@
                             <mask key="subviews">
                                 <exclude reference="47X-Cc-D0K"/>
                                 <exclude reference="ktY-1h-gzL"/>
-                                <exclude reference="n2y-MV-vpR"/>
-                                <exclude reference="VTw-1f-uXt"/>
                                 <exclude reference="srL-Ez-5Yj"/>
+                                <exclude reference="ev6-H9-DQr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="aiD-13-e73"/>
-                                <exclude reference="q2C-vt-owi"/>
-                                <exclude reference="5MF-gt-LAK"/>
-                                <exclude reference="eTs-x6-eeU"/>
+                                <exclude reference="O8a-D3-U1k"/>
+                                <exclude reference="ZOi-wD-Eua"/>
+                                <exclude reference="m0Y-yS-Hvr"/>
                                 <exclude reference="H7v-h3-TGQ"/>
                                 <exclude reference="96R-2j-cFy"/>
                                 <exclude reference="MeW-WS-ZIw"/>
@@ -315,15 +395,13 @@
                             <mask key="subviews">
                                 <include reference="47X-Cc-D0K"/>
                                 <include reference="ktY-1h-gzL"/>
-                                <include reference="n2y-MV-vpR"/>
-                                <include reference="VTw-1f-uXt"/>
                                 <include reference="srL-Ez-5Yj"/>
+                                <include reference="ev6-H9-DQr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="aiD-13-e73"/>
-                                <include reference="q2C-vt-owi"/>
-                                <include reference="5MF-gt-LAK"/>
-                                <include reference="eTs-x6-eeU"/>
+                                <include reference="O8a-D3-U1k"/>
+                                <include reference="ZOi-wD-Eua"/>
+                                <include reference="m0Y-yS-Hvr"/>
                                 <include reference="H7v-h3-TGQ"/>
                                 <include reference="96R-2j-cFy"/>
                                 <include reference="MeW-WS-ZIw"/>
