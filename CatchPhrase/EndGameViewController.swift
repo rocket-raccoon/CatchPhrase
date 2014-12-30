@@ -18,7 +18,7 @@ class EndGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(String(scoreKeeper.team1Score))
+        //Show the final standings of the game
         team1Score.text = String(scoreKeeper.team1Score)
         team2Score.text = String(scoreKeeper.team2Score)
         if (scoreKeeper.team1Score > scoreKeeper.team2Score) {
@@ -26,10 +26,8 @@ class EndGameViewController: UIViewController {
         } else {
             winnerTextLabel.text = "Team 2 Wins!!"
         }
-    }
-    
-    @IBAction func goHome(sender: UIButton) {
-        
+        //Disable the back button, add an exit game button
+        self.navigationItem.setHidesBackButton(true, animated: false)
     }
     
     override func didReceiveMemoryWarning() {

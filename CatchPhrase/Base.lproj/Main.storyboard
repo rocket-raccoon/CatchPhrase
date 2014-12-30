@@ -145,6 +145,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="132" y="44" width="137" height="29"/>
+                                </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yS7-TH-nMh">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -470,9 +473,11 @@
                         <outlet property="phraseTextView" destination="VTw-1f-uXt" id="8kL-Bh-qJk"/>
                         <outlet property="topView" destination="ev6-H9-DQr" id="ogI-F5-FUi"/>
                         <segue destination="tYv-ts-rvR" kind="show" identifier="endRound" id="B0l-Gi-NoI"/>
+                        <segue destination="r36-PW-TOy" kind="unwind" identifier="exitGame" unwindAction="unwindToHomeScreen:" id="MXd-yL-5m1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xC7-Hy-OK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="r36-PW-TOy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2208" y="1069"/>
         </scene>
@@ -607,9 +612,11 @@
                     </view>
                     <connections>
                         <segue destination="pju-Yx-D0Z" kind="show" identifier="goToRebuttal" id="ZOU-jO-vrB"/>
+                        <segue destination="jKD-j6-c7x" kind="unwind" identifier="exitGame" unwindAction="unwindToHomeScreen:" id="YPZ-aj-qXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EoO-MS-Kej" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jKD-j6-c7x" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2973" y="1065"/>
         </scene>
@@ -731,9 +738,11 @@
                     </view>
                     <connections>
                         <segue destination="egb-fA-Rio" kind="show" identifier="showCurrentStandings" id="FKc-Pc-bRO"/>
+                        <segue destination="d1A-xZ-fab" kind="unwind" identifier="exitGame" unwindAction="unwindToHomeScreen:" id="6oD-hp-0wr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFh-Lq-Vx2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="d1A-xZ-fab" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3781.5" y="1063"/>
         </scene>
@@ -965,9 +974,11 @@
                         <outlet property="team2ScoreTextField" destination="dVO-fl-vKM" id="3nm-Hy-stX"/>
                         <segue destination="8sn-tQ-Og8" kind="show" identifier="startNextRound" id="EDa-BJ-j0N"/>
                         <segue destination="v3w-wd-0IB" kind="show" identifier="endGame" id="fPp-mH-lNl"/>
+                        <segue destination="1Zu-7K-oJN" kind="unwind" identifier="exitGame" unwindAction="unwindToHomeScreen:" id="yEf-HR-aIS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fb5-Pi-6c7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1Zu-7K-oJN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4516.5" y="1063"/>
         </scene>
@@ -1036,7 +1047,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="show" id="KQ7-Rf-dQB"/>
+                                    <segue destination="KQH-ms-znx" kind="unwind" unwindAction="unwindToHomeScreen:" id="FsQ-8x-dfI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1125,6 +1136,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPM-vl-fDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KQH-ms-znx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4504.5" y="1888"/>
         </scene>
@@ -1148,7 +1160,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KQ7-Rf-dQB"/>
         <segue reference="EDa-BJ-j0N"/>
     </inferredMetricsTieBreakers>
 </document>
