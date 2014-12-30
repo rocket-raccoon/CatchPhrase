@@ -810,16 +810,28 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNm-YZ-6Ms">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="End Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="148" y="490" width="73" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="endGame:" destination="egb-fA-Rio" eventType="touchUpInside" id="EqA-fw-9PP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jO-hu-VOI">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="UHq-OX-cgR"/>
+                                </constraints>
                                 <state key="normal" title="Start Next Round">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -828,6 +840,17 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UHq-OX-cgR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="140" y="379" width="119" height="70"/>
+                                    <mask key="constraints">
+                                        <include reference="UHq-OX-cgR"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="startNextRound:" destination="egb-fA-Rio" eventType="touchUpInside" id="Ext-lQ-X5U"/>
                                 </connections>
@@ -836,23 +859,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9I3-IA-ov4" firstAttribute="width" secondItem="kF4-IA-hqf" secondAttribute="width" id="2M5-cO-cXO"/>
+                            <constraint firstItem="QNm-YZ-6Ms" firstAttribute="top" secondItem="0jO-hu-VOI" secondAttribute="bottom" constant="41" id="89M-0h-fnp"/>
+                            <constraint firstItem="0jO-hu-VOI" firstAttribute="width" secondItem="QNm-YZ-6Ms" secondAttribute="width" id="8ax-4m-5QK"/>
                             <constraint firstItem="rmX-PL-dmZ" firstAttribute="top" secondItem="9I3-IA-ov4" secondAttribute="bottom" constant="20" id="9vy-Ok-jnh"/>
                             <constraint firstItem="dVO-fl-vKM" firstAttribute="leading" secondItem="rmX-PL-dmZ" secondAttribute="trailing" constant="47" id="DNM-G3-JUC"/>
-                            <constraint firstAttribute="centerX" secondItem="0jO-hu-VOI" secondAttribute="centerX" constant="-0.5" id="EWa-Gw-eIp"/>
                             <constraint firstItem="9I3-IA-ov4" firstAttribute="top" secondItem="V6k-bX-gq8" secondAttribute="bottom" constant="95" id="HRy-xA-Izc"/>
+                            <constraint firstItem="0jO-hu-VOI" firstAttribute="top" secondItem="kF4-IA-hqf" secondAttribute="bottom" constant="110" id="J0y-ud-fJU"/>
                             <constraint firstItem="KFc-fL-o84" firstAttribute="top" secondItem="dqb-uS-mRb" secondAttribute="bottom" constant="27.5" id="LLI-Hd-a0n"/>
                             <constraint firstItem="dqb-uS-mRb" firstAttribute="top" secondItem="V6k-bX-gq8" secondAttribute="bottom" constant="43" id="MbS-YZ-F2v"/>
                             <constraint firstItem="rmX-PL-dmZ" firstAttribute="width" secondItem="kF4-IA-hqf" secondAttribute="width" id="QHM-WX-hF0"/>
                             <constraint firstItem="rmX-PL-dmZ" firstAttribute="leading" secondItem="tTD-Ml-PWB" secondAttribute="leadingMargin" constant="40" id="XVo-MU-wGu"/>
-                            <constraint firstItem="2QO-2E-HUT" firstAttribute="top" secondItem="0jO-hu-VOI" secondAttribute="bottom" constant="133" id="ZMx-qi-cNM"/>
+                            <constraint firstAttribute="centerX" secondItem="0jO-hu-VOI" secondAttribute="centerX" constant="0.5" id="Yzt-m0-WV0"/>
+                            <constraint firstItem="0jO-hu-VOI" firstAttribute="height" secondItem="QNm-YZ-6Ms" secondAttribute="height" id="ZMr-Rj-pN5"/>
                             <constraint firstItem="dVO-fl-vKM" firstAttribute="top" secondItem="KFc-fL-o84" secondAttribute="bottom" constant="12" id="dwW-dw-mMK"/>
                             <constraint firstItem="9I3-IA-ov4" firstAttribute="leading" secondItem="tTD-Ml-PWB" secondAttribute="leadingMargin" constant="40" id="fKF-zZ-xu4"/>
+                            <constraint firstAttribute="centerX" secondItem="QNm-YZ-6Ms" secondAttribute="centerX" id="inj-UH-MXH"/>
                             <constraint firstAttribute="centerX" secondItem="dqb-uS-mRb" secondAttribute="centerX" id="nmI-iL-s6F"/>
                             <constraint firstItem="kF4-IA-hqf" firstAttribute="top" secondItem="rmX-PL-dmZ" secondAttribute="bottom" constant="27" id="r1j-QB-Khp"/>
                             <constraint firstItem="f6A-bI-ejB" firstAttribute="leading" secondItem="kF4-IA-hqf" secondAttribute="trailing" constant="39" id="uPU-XR-pmN"/>
                             <constraint firstItem="kF4-IA-hqf" firstAttribute="leading" secondItem="tTD-Ml-PWB" secondAttribute="leadingMargin" constant="40" id="uc8-GZ-hgO"/>
                             <constraint firstItem="f6A-bI-ejB" firstAttribute="top" secondItem="dVO-fl-vKM" secondAttribute="bottom" constant="17" id="vtF-ns-16p"/>
                             <constraint firstItem="KFc-fL-o84" firstAttribute="leading" secondItem="9I3-IA-ov4" secondAttribute="trailing" constant="47" id="yjM-na-HlQ"/>
+                            <constraint firstItem="0jO-hu-VOI" firstAttribute="width" secondItem="tTD-Ml-PWB" secondAttribute="width" multiplier="0.35" id="zny-Xz-A6X"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -883,8 +911,13 @@
                                 <exclude reference="dwW-dw-mMK"/>
                                 <exclude reference="uPU-XR-pmN"/>
                                 <exclude reference="vtF-ns-16p"/>
-                                <exclude reference="EWa-Gw-eIp"/>
-                                <exclude reference="ZMx-qi-cNM"/>
+                                <exclude reference="8ax-4m-5QK"/>
+                                <exclude reference="J0y-ud-fJU"/>
+                                <exclude reference="Yzt-m0-WV0"/>
+                                <exclude reference="ZMr-Rj-pN5"/>
+                                <exclude reference="zny-Xz-A6X"/>
+                                <exclude reference="89M-0h-fnp"/>
+                                <exclude reference="inj-UH-MXH"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -916,8 +949,13 @@
                                 <include reference="dwW-dw-mMK"/>
                                 <include reference="uPU-XR-pmN"/>
                                 <include reference="vtF-ns-16p"/>
-                                <include reference="EWa-Gw-eIp"/>
-                                <include reference="ZMx-qi-cNM"/>
+                                <include reference="8ax-4m-5QK"/>
+                                <include reference="J0y-ud-fJU"/>
+                                <include reference="Yzt-m0-WV0"/>
+                                <include reference="ZMr-Rj-pN5"/>
+                                <include reference="zny-Xz-A6X"/>
+                                <include reference="89M-0h-fnp"/>
+                                <include reference="inj-UH-MXH"/>
                             </mask>
                         </variation>
                     </view>

@@ -19,9 +19,9 @@ class CurrentStandingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        team1ScoreTextField.text = "\(scoreKeeper.team1Score)"
-        team2ScoreTextField.text = "\(scoreKeeper.team2Score)"
-        roundTextField.text = "\(scoreKeeper.currentRound) / \(scoreKeeper.totalRounds)"
+        team1ScoreTextField.text = String(scoreKeeper.team1Score)
+        team2ScoreTextField.text = String(scoreKeeper.team2Score)
+        roundTextField.text = String(scoreKeeper.currentRound)
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,12 +29,12 @@ class CurrentStandingsViewController: UIViewController {
     }
     
     @IBAction func startNextRound(sender: UIButton) {
-        if(scoreKeeper.currentRound != scoreKeeper.totalRounds) {
-            scoreKeeper.currentRound += 1
-            performSegueWithIdentifier("startNextRound", sender: nil)
-        } else {
-            performSegueWithIdentifier("endGame", sender: nil)
-        }
+        scoreKeeper.currentRound += 1
+        performSegueWithIdentifier("startNextRound", sender: nil)
+    }
+    
+    @IBAction func endGame(sender: UIButton) {
+        performSegueWithIdentifier("endGame", sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
