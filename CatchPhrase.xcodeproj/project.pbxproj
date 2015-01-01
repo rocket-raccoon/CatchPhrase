@@ -22,6 +22,15 @@
 		2DD3C2311A50E9CF00257FF8 /* RebuttalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2301A50E9CF00257FF8 /* RebuttalViewController.swift */; };
 		2DD3C2331A50EE7B00257FF8 /* CurrentStandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2321A50EE7B00257FF8 /* CurrentStandingsViewController.swift */; };
 		2DD3C2351A513ACF00257FF8 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2341A513ACF00257FF8 /* EndGameViewController.swift */; };
+		2DD3C2371A549ADE00257FF8 /* CategorySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C2361A549ADE00257FF8 /* CategorySelectViewController.swift */; };
+		2DD3C2401A54C35C00257FF8 /* Travel.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C2381A54C35C00257FF8 /* Travel.txt */; };
+		2DD3C2411A54C35C00257FF8 /* People.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C2391A54C35C00257FF8 /* People.txt */; };
+		2DD3C2421A54C35C00257FF8 /* Household Items.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C23A1A54C35C00257FF8 /* Household Items.txt */; };
+		2DD3C2431A54C35C00257FF8 /* Food.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C23B1A54C35C00257FF8 /* Food.txt */; };
+		2DD3C2441A54C35C00257FF8 /* Animals.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C23C1A54C35C00257FF8 /* Animals.txt */; };
+		2DD3C2451A54C35C00257FF8 /* Hard.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C23D1A54C35C00257FF8 /* Hard.txt */; };
+		2DD3C2461A54C35C00257FF8 /* Medium.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C23E1A54C35C00257FF8 /* Medium.txt */; };
+		2DD3C2471A54C35C00257FF8 /* Easy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C23F1A54C35C00257FF8 /* Easy.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +63,15 @@
 		2DD3C2301A50E9CF00257FF8 /* RebuttalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RebuttalViewController.swift; sourceTree = "<group>"; };
 		2DD3C2321A50EE7B00257FF8 /* CurrentStandingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentStandingsViewController.swift; sourceTree = "<group>"; };
 		2DD3C2341A513ACF00257FF8 /* EndGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
+		2DD3C2361A549ADE00257FF8 /* CategorySelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectViewController.swift; sourceTree = "<group>"; };
+		2DD3C2381A54C35C00257FF8 /* Travel.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Travel.txt; sourceTree = "<group>"; };
+		2DD3C2391A54C35C00257FF8 /* People.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = People.txt; sourceTree = "<group>"; };
+		2DD3C23A1A54C35C00257FF8 /* Household Items.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Household Items.txt"; sourceTree = "<group>"; };
+		2DD3C23B1A54C35C00257FF8 /* Food.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Food.txt; sourceTree = "<group>"; };
+		2DD3C23C1A54C35C00257FF8 /* Animals.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Animals.txt; sourceTree = "<group>"; };
+		2DD3C23D1A54C35C00257FF8 /* Hard.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Hard.txt; sourceTree = "<group>"; };
+		2DD3C23E1A54C35C00257FF8 /* Medium.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Medium.txt; sourceTree = "<group>"; };
+		2DD3C23F1A54C35C00257FF8 /* Easy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Easy.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +117,7 @@
 				2DD3C2021A4DF2AE00257FF8 /* AppDelegate.swift */,
 				2DD3C2041A4DF2AE00257FF8 /* HomePageViewController.swift */,
 				2DD3C2061A4DF2AE00257FF8 /* Main.storyboard */,
+				2DD3C2361A549ADE00257FF8 /* CategorySelectViewController.swift */,
 				2DD3C2321A50EE7B00257FF8 /* CurrentStandingsViewController.swift */,
 				2DD3C2341A513ACF00257FF8 /* EndGameViewController.swift */,
 				2DD3C2301A50E9CF00257FF8 /* RebuttalViewController.swift */,
@@ -116,6 +135,14 @@
 		2DD3C2001A4DF2AE00257FF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DD3C2381A54C35C00257FF8 /* Travel.txt */,
+				2DD3C2391A54C35C00257FF8 /* People.txt */,
+				2DD3C23A1A54C35C00257FF8 /* Household Items.txt */,
+				2DD3C23B1A54C35C00257FF8 /* Food.txt */,
+				2DD3C23C1A54C35C00257FF8 /* Animals.txt */,
+				2DD3C23D1A54C35C00257FF8 /* Hard.txt */,
+				2DD3C23E1A54C35C00257FF8 /* Medium.txt */,
+				2DD3C23F1A54C35C00257FF8 /* Easy.txt */,
 				2DD3C22C1A4F79E700257FF8 /* countdown.mp3 */,
 				2DD3C2011A4DF2AE00257FF8 /* Info.plist */,
 			);
@@ -219,10 +246,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD3C2401A54C35C00257FF8 /* Travel.txt in Resources */,
 				2DD3C22D1A4F79E700257FF8 /* countdown.mp3 in Resources */,
 				2DD3C2081A4DF2AE00257FF8 /* Main.storyboard in Resources */,
+				2DD3C2421A54C35C00257FF8 /* Household Items.txt in Resources */,
+				2DD3C2411A54C35C00257FF8 /* People.txt in Resources */,
+				2DD3C2461A54C35C00257FF8 /* Medium.txt in Resources */,
+				2DD3C2451A54C35C00257FF8 /* Hard.txt in Resources */,
 				2DD3C20D1A4DF2AE00257FF8 /* LaunchScreen.xib in Resources */,
+				2DD3C2471A54C35C00257FF8 /* Easy.txt in Resources */,
+				2DD3C2431A54C35C00257FF8 /* Food.txt in Resources */,
 				2DD3C20A1A4DF2AE00257FF8 /* Images.xcassets in Resources */,
+				2DD3C2441A54C35C00257FF8 /* Animals.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD3C2371A549ADE00257FF8 /* CategorySelectViewController.swift in Sources */,
 				2DD3C22B1A4F6DF900257FF8 /* ScoreKeeper.swift in Sources */,
 				2DD3C2331A50EE7B00257FF8 /* CurrentStandingsViewController.swift in Sources */,
 				2DD3C2351A513ACF00257FF8 /* EndGameViewController.swift in Sources */,

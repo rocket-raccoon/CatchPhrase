@@ -38,7 +38,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="8sn-tQ-Og8" kind="show" identifier="startGame" id="GS1-hD-A5Z"/>
+                                    <segue destination="Kdy-Z6-Wfk" kind="show" identifier="goSelectCategory" id="mUQ-WH-YSJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62E-JC-WYs">
@@ -213,6 +213,102 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dk-79-3XX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2208" y="349"/>
+        </scene>
+        <!--Category Select View Controller-->
+        <scene sceneID="f90-9s-Bao">
+            <objects>
+                <viewController id="Kdy-Z6-Wfk" customClass="CategorySelectViewController" customModule="CatchPhrase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qeb-k5-CTi"/>
+                        <viewControllerLayoutGuide type="bottom" id="tMr-Nv-aJU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zU6-Ze-jcA">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIc-Bx-uft">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="40" y="195" width="320" height="162"/>
+                                </variation>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Seq-H7-lzl">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="133" y="99" width="134" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQI-IL-A2i">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="169" y="408" width="62" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="8sn-tQ-Og8" kind="show" identifier="continueToGame" id="yBf-8D-j81"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Seq-H7-lzl" firstAttribute="top" secondItem="qeb-k5-CTi" secondAttribute="bottom" constant="75" id="BGe-hP-F9B"/>
+                            <constraint firstAttribute="centerX" secondItem="yQI-IL-A2i" secondAttribute="centerX" id="ZCi-Jc-MgL"/>
+                            <constraint firstAttribute="centerX" secondItem="UIc-Bx-uft" secondAttribute="centerX" id="bUX-Di-N5m"/>
+                            <constraint firstItem="yQI-IL-A2i" firstAttribute="width" secondItem="zU6-Ze-jcA" secondAttribute="width" multiplier="0.5" id="cSU-pD-eWS"/>
+                            <constraint firstItem="UIc-Bx-uft" firstAttribute="top" secondItem="Seq-H7-lzl" secondAttribute="bottom" constant="75" id="hV2-H6-khy"/>
+                            <constraint firstAttribute="centerX" secondItem="Seq-H7-lzl" secondAttribute="centerX" id="oxL-8d-h9x"/>
+                            <constraint firstItem="yQI-IL-A2i" firstAttribute="top" secondItem="UIc-Bx-uft" secondAttribute="bottom" constant="51" id="vdk-9k-eB3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="UIc-Bx-uft"/>
+                                <exclude reference="Seq-H7-lzl"/>
+                                <exclude reference="yQI-IL-A2i"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="BGe-hP-F9B"/>
+                                <exclude reference="oxL-8d-h9x"/>
+                                <exclude reference="bUX-Di-N5m"/>
+                                <exclude reference="hV2-H6-khy"/>
+                                <exclude reference="ZCi-Jc-MgL"/>
+                                <exclude reference="cSU-pD-eWS"/>
+                                <exclude reference="vdk-9k-eB3"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="UIc-Bx-uft"/>
+                                <include reference="Seq-H7-lzl"/>
+                                <include reference="yQI-IL-A2i"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="BGe-hP-F9B"/>
+                                <include reference="oxL-8d-h9x"/>
+                                <include reference="bUX-Di-N5m"/>
+                                <include reference="hV2-H6-khy"/>
+                                <include reference="ZCi-Jc-MgL"/>
+                                <include reference="cSU-pD-eWS"/>
+                                <include reference="vdk-9k-eB3"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="categoryPicker" destination="UIc-Bx-uft" id="Zys-zv-iLo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mW-DS-COZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357.5" y="1069"/>
         </scene>
         <!--Guess Round View Controller-->
         <scene sceneID="PvE-1i-krs">
@@ -1176,6 +1272,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GS1-hD-A5Z"/>
+        <segue reference="yBf-8D-j81"/>
     </inferredMetricsTieBreakers>
 </document>

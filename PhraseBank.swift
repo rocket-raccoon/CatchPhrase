@@ -11,11 +11,17 @@ import Foundation
 class PhraseBank {
     
     //This array will store all of our potential phrases
-    var phraseArray = ["The Cat in the Hat", "Beauty and the Beast", "Hello World", "Young and Reckless", "Red Baron"]
+    var phraseArray:[String]!
     var copyPhraseArray:[String]!
     
-    init() {
-        self.copyPhraseArray = phraseArray
+    init(category: String) {
+        //Read in the appropriate set of phrases based on the category passed in
+        let filePath = NSBundle.mainBundle().pathForResource(category, ofType: ".txt")
+        var contents = String(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)
+        var phrases = contents?.componentsSeparatedByString("\n")
+        phrases?.removeLast()
+        phraseArray = phrases
+        copyPhraseArray = phraseArray
     }
     
     //Randomly grab a new phrase from the phrase array and return it
