@@ -8,24 +8,39 @@
 
 import UIKit
 
-class CurrentStandingsViewController: UIViewController {
+class CurrentStandingsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var scoreKeeper:ScoreKeeper!
     var phraseBank:PhraseBank!
+    var labels = [["Team 1 Score", "0"], ["Team 2 Score", "0"], ["Current Round", "0"]]
     
-    @IBOutlet weak var team1ScoreTextField: UITextField!
-    @IBOutlet weak var team2ScoreTextField: UITextField!
-    @IBOutlet weak var roundTextField: UITextField!
+    @IBOutlet var standingsGrid: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        team1ScoreTextField.text = String(scoreKeeper.team1Score)
-        team2ScoreTextField.text = String(scoreKeeper.team2Score)
-        roundTextField.text = String(scoreKeeper.currentRound)
         //Disable the back button, add an exit game button
         self.navigationItem.setHidesBackButton(true, animated: false)
         var b = UIBarButtonItem(title: "Exit Game", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("exitGame"))
         self.navigationItem.rightBarButtonItem = b
+        //Update scores
+        labels[0][1] = String(scoreKeeper.team1Score)
+        labels[1][1] = String(scoreKeeper.team2Score)
+        labels[2][1] = String(scoreKeeper.currentRound)
+        //Set collection view
+        let layout = UICollectionViewFlowLayout()
+        Int maxWidth = getMaxWidth()
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        layout.itemSize = CGSize(width: maxWidth, height: 50)
+        standingsGrid.collectionViewLayout = layout
+        standingsGrid.registerClass(StandingsCell.self, forCellWithReuseIdentifier: "cell")
+    }
+    
+    func getMaxWidth() -> Int {
+        for list in labels {
+            for value in list {
+                
+            }
+        }
     }
     
     func exitGame() {
@@ -43,6 +58,23 @@ class CurrentStandingsViewController: UIViewController {
     
     @IBAction func endGame(sender: UIButton) {
         performSegueWithIdentifier("endGame", sender: nil)
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return labels.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return labels[section].count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let section = indexPath.section
+        let row = indexPath.row
+        var cell = standingsGrid.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as StandingsCell
+        cell.backgroundColor = UIColor.whiteColor()
+        cell.textLabel.text = labels[section][row]
+        return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

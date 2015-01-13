@@ -54,9 +54,11 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
             audioPlayer.stop()
             audioPlayer.play()
             pauseButton.setTitle("Pause", forState: UIControlState.Normal)
+            pauseButton.backgroundColor = UIColor.redColor();
         } else {
             audioPlayer.stop()
             pauseButton.setTitle("Resume", forState: UIControlState.Normal)
+            pauseButton.backgroundColor = UIColor.greenColor()
         }
     }
     
