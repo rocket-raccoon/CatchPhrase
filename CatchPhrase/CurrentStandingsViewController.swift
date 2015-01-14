@@ -28,19 +28,10 @@ class CurrentStandingsViewController: UIViewController, UICollectionViewDataSour
         labels[2][1] = String(scoreKeeper.currentRound)
         //Set collection view
         let layout = UICollectionViewFlowLayout()
-        Int maxWidth = getMaxWidth()
         layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-        layout.itemSize = CGSize(width: maxWidth, height: 50)
+        layout.itemSize = CGSize(width: 50, height: 50)
         standingsGrid.collectionViewLayout = layout
         standingsGrid.registerClass(StandingsCell.self, forCellWithReuseIdentifier: "cell")
-    }
-    
-    func getMaxWidth() -> Int {
-        for list in labels {
-            for value in list {
-                
-            }
-        }
     }
     
     func exitGame() {

@@ -10,16 +10,34 @@ import UIKit
 
 class CategorySelectViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak var categoryPicker: UIPickerView!
-    
+    var selectButton: UIButton!
+    var headerLabel: UILabel!
+    var categoryPicker: UIPickerView!
     var categories = [["Easy", "Medium", "Hard", "Animals", "Food", "Household Items", "People", "Travel"]]
     var selectedCategory:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupHeaderLabel()
+        setupCategoryPicker()
+        setupSelectButton()
+        selectedCategory = categories[0][0]
+    }
+    
+    func setupHeaderLabel() {
+        
+    }
+    
+    func setupSelectButton() {
+        
+    }
+    
+    func setupCategoryPicker() {
+        let pickerViewFrame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 200)
+        categoryPicker = UIPickerView(frame: pickerViewFrame)
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
-        selectedCategory = categories[0][0]
+        view.addSubview(categoryPicker)
     }
     
     override func didReceiveMemoryWarning() {
