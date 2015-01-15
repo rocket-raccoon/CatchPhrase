@@ -58,7 +58,7 @@ class HomePageViewController: UIViewController {
         playButton.backgroundColor = UIColor.blueColor()
         playButton.setTranslatesAutoresizingMaskIntoConstraints(false)
         playButton.layer.cornerRadius = 10
-        playButton.addTarget(self, action: Selector("playGame"), forControlEvents: UIControlEvents.TouchUpInside)
+        playButton.addTarget(self, action: Selector("goToSelectCategory"), forControlEvents: UIControlEvents.TouchUpInside)
         view.addSubview(playButton)
         //Set the width and horizontal center constraints on the play button
         var widthConstraint = NSLayoutConstraint(item: playButton, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.Width, multiplier: 0.8, constant: 0)
@@ -85,7 +85,7 @@ class HomePageViewController: UIViewController {
         view.addConstraint(horizontalCenterConstraint)
     }
     
-    func playGame() {
+    func goToSelectCategory() {
         let categorySelectVC = CategorySelectViewController()
         navigationController?.pushViewController(categorySelectVC, animated: false)
     }

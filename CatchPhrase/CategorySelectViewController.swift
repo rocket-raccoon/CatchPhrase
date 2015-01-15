@@ -25,19 +25,63 @@ class CategorySelectViewController: UIViewController, UIPickerViewDataSource, UI
     }
     
     func setupHeaderLabel() {
-        
+        //Create the header label
+        let headerLabelFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        headerLabel = UILabel(frame: headerLabelFrame)
+        headerLabel.text = "Please Select a Category"
+        headerLabel.font = UIFont(descriptor: headerLabel.font.fontDescriptor(), size: 30)
+        headerLabel.sizeToFit()
+        headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        view.addSubview(headerLabel)
+        //Set the constraints for the header label
+        let viewDictionary = ["view": view, "headerLabel": headerLabel]
+        let horizontalCenterConst = NSLayoutConstraint(item: headerLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0)
+        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-75-[headerLabel]", options: nil, metrics: nil, views: viewDictionary)
+        view.addConstraint(horizontalCenterConst)
+        view.addConstraints(verticalSpacingConst)
     }
     
     func setupSelectButton() {
-        
+        //Create the select category button
+        let selectButtonFrame = CGRect(x: 0, y: 0, width: 0, height: 60)
+        selectButton = UIButton(frame: selectButtonFrame)
+        selectButton.setTitle("Select", forState: .Normal)
+        selectButton.backgroundColor = UIColor.blueColor()
+        selectButton.layer.cornerRadius = 10
+        selectButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        selectButton.addTarget(self, action: Selector("startGame"), forControlEvents: UIControlEvents.TouchUpInside)
+        view.addSubview(selectButton)
+        //Make button width proportional to screen width
+        let widthConst = NSLayoutConstraint(item: selectButton, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0.0)
+        view.addConstraint(widthConst)
+        //Center the button horizontally
+        let centerHorizontalConst = NSLayoutConstraint(item: selectButton, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(centerHorizontalConst)
+        //Place the button just above bottom of screen
+        let verticalSpaceConst = NSLayoutConstraint.constraintsWithVisualFormat("V:[selectButton]-30-|", options: nil, metrics: nil, views: ["selectButton": selectButton])
+        view.addConstraints(verticalSpaceConst)
     }
     
     func setupCategoryPicker() {
+        //Create the picker view
         let pickerViewFrame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 200)
         categoryPicker = UIPickerView(frame: pickerViewFrame)
         categoryPicker.delegate = self
         categoryPicker.dataSource = self
+        categoryPicker.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.addSubview(categoryPicker)
+        //Position it just below the header label
+        let justBelowLabelConst = NSLayoutConstraint(item: categoryPicker, attribute: .Top, relatedBy: .Equal, toItem: headerLabel, attribute: .Bottom, multiplier: 0.0, constant: 100)
+        view.addConstraint(justBelowLabelConst)
+    }
+    
+    func startGame() {
+        var roundVC = GuessRoundViewController()
+        var phraseBank = PhraseBank(category: selectedCategory)
+        var scoreKeeper = ScoreKeeper()
+        roundVC.phraseBank = phraseBank
+        roundVC.scoreKeeper = scoreKeeper
+        navigationController?.pushViewController(roundVC, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,16 +102,6 @@ class CategorySelectViewController: UIViewController, UIPickerViewDataSource, UI
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedCategory = categories[0][pickerView.selectedRowInComponent(0)]
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "continueToGame") {
-            var roundVC = segue.destinationViewController as GuessRoundViewController
-            var phraseBank = PhraseBank(category: selectedCategory)
-            var scoreKeeper = ScoreKeeper()
-            roundVC.phraseBank = phraseBank
-            roundVC.scoreKeeper = scoreKeeper
-        }
     }
     
 }
