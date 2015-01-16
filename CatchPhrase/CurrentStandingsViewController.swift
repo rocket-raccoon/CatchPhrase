@@ -14,8 +14,6 @@ class CurrentStandingsViewController: UIViewController, UICollectionViewDataSour
     var phraseBank:PhraseBank!
     var labels = [["Team 1 Score", "0"], ["Team 2 Score", "0"], ["Current Round", "0"]]
     
-    @IBOutlet var standingsGrid: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Disable the back button, add an exit game button
@@ -30,8 +28,8 @@ class CurrentStandingsViewController: UIViewController, UICollectionViewDataSour
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
         layout.itemSize = CGSize(width: 50, height: 50)
-        standingsGrid.collectionViewLayout = layout
-        standingsGrid.registerClass(StandingsCell.self, forCellWithReuseIdentifier: "cell")
+        //standingsGrid.collectionViewLayout = layout
+        //standingsGrid.registerClass(StandingsCell.self, forCellWithReuseIdentifier: "cell")
     }
     
     func exitGame() {
@@ -40,15 +38,6 @@ class CurrentStandingsViewController: UIViewController, UICollectionViewDataSour
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func startNextRound(sender: UIButton) {
-        scoreKeeper.currentRound += 1
-        performSegueWithIdentifier("startNextRound", sender: nil)
-    }
-    
-    @IBAction func endGame(sender: UIButton) {
-        performSegueWithIdentifier("endGame", sender: nil)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -62,21 +51,10 @@ class CurrentStandingsViewController: UIViewController, UICollectionViewDataSour
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let section = indexPath.section
         let row = indexPath.row
-        var cell = standingsGrid.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as StandingsCell
-        cell.backgroundColor = UIColor.whiteColor()
-        cell.textLabel.text = labels[section][row]
-        return cell
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "startNextRound") {
-            var roundVC = segue.destinationViewController as GuessRoundViewController
-            roundVC.scoreKeeper = scoreKeeper
-            roundVC.phraseBank = phraseBank
-        } else if (segue.identifier == "endGame") {
-            var endGameVC = segue.destinationViewController as EndGameViewController
-            endGameVC.scoreKeeper = scoreKeeper
-        }
+        //var cell = standingsGrid.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as StandingsCell
+        //cell.backgroundColor = UIColor.whiteColor()
+        //cell.textLabel.text = labels[section][row]
+        return UICollectionViewCell()
     }
     
 }
