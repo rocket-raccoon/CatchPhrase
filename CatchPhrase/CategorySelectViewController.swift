@@ -43,17 +43,8 @@ class CategorySelectViewController: UIViewController, UIPickerViewDataSource, UI
     
     func setupSelectButton() {
         //Create the select category button
-        let selectButtonFrame = CGRect(x: 0, y: 0, width: 0, height: 60)
-        selectButton = UIButton(frame: selectButtonFrame)
-        selectButton.setTitle("Select", forState: .Normal)
-        selectButton.backgroundColor = UIColor.blueColor()
-        selectButton.layer.cornerRadius = 10
-        selectButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        selectButton.addTarget(self, action: Selector("startGame"), forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(selectButton)
-        //Make button width proportional to screen width
-        let widthConst = NSLayoutConstraint(item: selectButton, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0.0)
-        view.addConstraint(widthConst)
+        selectButton = StandardButtonCreator().createStandardButton("Select", enclosingView: view)
+        selectButton.addTarget(self, action: Selector("startGame"), forControlEvents: .TouchUpInside)
         //Center the button horizontally
         let centerHorizontalConst = NSLayoutConstraint(item: selectButton, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
         view.addConstraint(centerHorizontalConst)

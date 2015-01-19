@@ -45,28 +45,12 @@ class EndRoundViewController: UIViewController {
     
     func setupTeamSelectionButtons() {
         //Create both buttons
-        var buttonFrame = CGRect()
-        teamOneButton = UIButton(frame: buttonFrame)
-        teamTwoButton = UIButton(frame: buttonFrame)
-        teamOneButton.setTitle("Team 1", forState: .Normal)
-        teamTwoButton.setTitle("Team 2", forState: .Normal)
-        teamOneButton.backgroundColor = UIColor.blueColor()
-        teamTwoButton.backgroundColor = UIColor.blueColor()
-        teamOneButton.layer.cornerRadius = 10
-        teamTwoButton.layer.cornerRadius = 10
+        teamOneButton = StandardButtonCreator().createStandardButton("Team 1", enclosingView: view)
+        teamTwoButton = StandardButtonCreator().createStandardButton("Team 2", enclosingView: view)
         teamOneButton.tag = 1
         teamTwoButton.tag = 2
-        teamOneButton.addTarget(self, action: Selector("enterScore:"), forControlEvents: UIControlEvents.TouchUpInside)
-        teamTwoButton.addTarget(self, action: Selector("enterScore:"), forControlEvents: UIControlEvents.TouchUpInside)
-        teamOneButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        teamTwoButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        view.addSubview(teamOneButton)
-        view.addSubview(teamTwoButton)
-        //Set button widths proportional to screen width
-        let widthConst1 = NSLayoutConstraint(item: teamOneButton, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0)
-        let widthConst2 = NSLayoutConstraint(item: teamTwoButton, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0)
-        view.addConstraint(widthConst1)
-        view.addConstraint(widthConst2)
+        teamOneButton.addTarget(self, action: Selector("enterScore:"), forControlEvents: .TouchUpInside)
+        teamTwoButton.addTarget(self, action: Selector("enterScore:"), forControlEvents: .TouchUpInside)
         //Horizontally center both buttons
         let horizontalCenterConst1 = NSLayoutConstraint(item: teamOneButton, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
         let horizontalCenterConst2 = NSLayoutConstraint(item: teamTwoButton, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)

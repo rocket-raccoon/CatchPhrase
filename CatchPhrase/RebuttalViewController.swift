@@ -43,27 +43,12 @@ class RebuttalViewController: UIViewController {
     
     func setupButtons() {
         //Create both buttons
-        yesButton = UIButton(frame: CGRect())
-        noButton = UIButton(frame: CGRect())
-        yesButton.setTitle("Yes", forState: .Normal)
-        noButton.setTitle("No", forState: .Normal)
-        yesButton.backgroundColor = UIColor.blueColor()
-        noButton.backgroundColor = UIColor.blueColor()
-        yesButton.layer.cornerRadius = 10
-        noButton.layer.cornerRadius = 10
+        yesButton = StandardButtonCreator().createStandardButton("Yes", enclosingView: view)
+        noButton = StandardButtonCreator().createStandardButton("No", enclosingView: view)
         yesButton.tag = 1
         noButton.tag = 2
-        yesButton.addTarget(self, action: Selector("enterScore:"), forControlEvents: UIControlEvents.TouchUpInside)
-        noButton.addTarget(self, action: Selector("enterScore:"), forControlEvents: UIControlEvents.TouchUpInside)
-        yesButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        noButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        view.addSubview(yesButton)
-        view.addSubview(noButton)
-        //Set button widths proportional to screen width
-        let widthConst1 = NSLayoutConstraint(item: yesButton, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0)
-        let widthConst2 = NSLayoutConstraint(item: noButton, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0)
-        view.addConstraint(widthConst1)
-        view.addConstraint(widthConst2)
+        yesButton.addTarget(self, action: Selector("enterScore:"), forControlEvents: .TouchUpInside)
+        noButton.addTarget(self, action: Selector("enterScore:"), forControlEvents: .TouchUpInside)
         //Horizontally center both buttons
         let horizontalCenterConst1 = NSLayoutConstraint(item: yesButton, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
         let horizontalCenterConst2 = NSLayoutConstraint(item: noButton, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)

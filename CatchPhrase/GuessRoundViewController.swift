@@ -76,47 +76,20 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
     
     func setupPauseButton() {
         //Create the pause button
-        var pauseButtonFrame = CGRect(x: 0, y: 0, width: 0, height: 60)
-        pauseButton = UIButton(frame: pauseButtonFrame)
-        pauseButton.backgroundColor = UIColor.blueColor()
-        pauseButton.layer.cornerRadius = 10
-        pauseButton.setTitle("Pause", forState: .Normal)
-        pauseButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        pauseButton.addTarget(self, action: Selector("pauseGame"), forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(pauseButton)
-        //Set width to be proportional to screen width
-        let widthConst = NSLayoutConstraint(item: pauseButton, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0.0)
-        view.addConstraint(widthConst)
+        pauseButton = StandardButtonCreator().createStandardButton("Pause", enclosingView: view)
+        pauseButton.addTarget(self, action: Selector("pauseGame"), forControlEvents: .TouchUpInside)
     }
     
     func setupSkipButton() {
         //Create the skip button
-        var skipButtonFrame = CGRect(x: 0, y: 0, width: 0, height: 60)
-        skipButton = UIButton(frame: skipButtonFrame)
-        skipButton.backgroundColor = UIColor.blueColor()
-        skipButton.layer.cornerRadius = 10
-        skipButton.setTitle("Skip", forState: .Normal)
-        skipButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        skipButton.addTarget(self, action: Selector("skipPhrase"), forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(skipButton)
-        //Set width to be proportional to screen width
-        let widthConst = NSLayoutConstraint(item: skipButton, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0.0)
-        view.addConstraint(widthConst)
+        skipButton = StandardButtonCreator().createStandardButton("Skip", enclosingView: view)
+        skipButton.addTarget(self, action: Selector("skipPhrase"), forControlEvents: .TouchUpInside)
     }
     
     func setupNextButton() {
         //Create the next button
-        var nextButtonFrame = CGRect(x: 0, y: 0, width: 0, height: 60)
-        nextButton = UIButton(frame: nextButtonFrame)
-        nextButton.backgroundColor = UIColor.blueColor()
-        nextButton.layer.cornerRadius = 10
-        nextButton.setTitle("Next", forState: .Normal)
-        nextButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-        nextButton.addTarget(self, action: Selector("nextPhrase"), forControlEvents: UIControlEvents.TouchUpInside)
-        view.addSubview(nextButton)
-        //Set width to be proportional to screen width
-        let widthConst = NSLayoutConstraint(item: nextButton, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0.0)
-        view.addConstraint(widthConst)
+        nextButton = StandardButtonCreator().createStandardButton("Next", enclosingView: view)
+        nextButton.addTarget(self, action: Selector("nextPhrase"), forControlEvents: .TouchUpInside)
     }
     
     func horizontallyCenterViews(viewsToCenter: [UIView]) {
