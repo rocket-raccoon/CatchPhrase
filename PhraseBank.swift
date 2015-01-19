@@ -18,8 +18,7 @@ class PhraseBank {
         //Read in the appropriate set of phrases based on the category passed in
         let filePath = NSBundle.mainBundle().pathForResource(category, ofType: ".txt")
         var contents = String(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)
-        var phrases = contents?.componentsSeparatedByString("\n")
-        phrases?.removeLast()
+        var phrases = contents!.componentsSeparatedByString("\n")
         phraseArray = phrases
         copyPhraseArray = phraseArray
     }
