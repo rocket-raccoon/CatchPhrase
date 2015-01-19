@@ -21,6 +21,21 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
     var skipButton: UIButton!
     var nextButton: UIButton!
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(false)
+        //Put the new phrase on the screen
+        let phrase = phraseBank.getNextPhrase()
+        phraseLabel.text = phrase
+        phraseLabel.font = UIFont(name: phraseLabel.font.fontName, size: 20)
+        //Start the countdown timer
+        let filePath = NSBundle.mainBundle().pathForResource("countdown", ofType: ".mp3")
+        let filePathUrl = NSURL(fileURLWithPath: filePath!)
+        audioPlayer = AVAudioPlayer(contentsOfURL: filePathUrl, error: nil)
+        audioPlayer.delegate = self
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //Set up the views on the screen
@@ -31,17 +46,6 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
         setupNextButton()
         horizontallyCenterViews([skipButton, nextButton, pauseButton, headerLabel])
         verticallyOrientViews()
-        //Put up the phrase on screen
-        let phrase = phraseBank.getNextPhrase()
-        phraseLabel.text = phrase
-        phraseLabel.font = UIFont(name: phraseLabel.font.fontName, size: 20)
-        //Set up the audio for the countdown timer
-        let filePath = NSBundle.mainBundle().pathForResource("countdown", ofType: ".mp3")
-        let filePathUrl = NSURL(fileURLWithPath: filePath!)
-        audioPlayer = AVAudioPlayer(contentsOfURL: filePathUrl, error: nil)
-        audioPlayer.delegate = self
-        audioPlayer.prepareToPlay()
-        audioPlayer.play()
         //Disable the back button, add an exit game button
         self.navigationItem.setHidesBackButton(true, animated: false)
         var b = UIBarButtonItem(title: "Exit Game", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("exitGame"))

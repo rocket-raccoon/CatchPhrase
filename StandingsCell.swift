@@ -14,12 +14,12 @@ class StandingsCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let textFrame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
-        textLabel = UILabel(frame: textFrame)
+        textLabel = UILabel(frame: CGRect())
         textLabel.textAlignment = .Center
+        textLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         contentView.addSubview(textLabel)
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

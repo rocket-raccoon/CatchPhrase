@@ -31,6 +31,7 @@
 		2DD3C2461A54C35C00257FF8 /* Medium.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C23E1A54C35C00257FF8 /* Medium.txt */; };
 		2DD3C2471A54C35C00257FF8 /* Easy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C23F1A54C35C00257FF8 /* Easy.txt */; };
 		2DD3C24B1A6509B400257FF8 /* StandingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C24A1A6509B400257FF8 /* StandingsCell.swift */; };
+		2DD3C24D1A6D65EE00257FF8 /* StandardButtonCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C24C1A6D65EE00257FF8 /* StandardButtonCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		2DD3C23E1A54C35C00257FF8 /* Medium.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Medium.txt; sourceTree = "<group>"; };
 		2DD3C23F1A54C35C00257FF8 /* Easy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Easy.txt; sourceTree = "<group>"; };
 		2DD3C24A1A6509B400257FF8 /* StandingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandingsCell.swift; path = ../StandingsCell.swift; sourceTree = "<group>"; };
+		2DD3C24C1A6D65EE00257FF8 /* StandardButtonCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardButtonCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				2DD3C2281A4F3CD800257FF8 /* PhraseBank.swift */,
 				2DD3C2021A4DF2AE00257FF8 /* AppDelegate.swift */,
 				2DD3C2041A4DF2AE00257FF8 /* HomePageViewController.swift */,
+				2DD3C24C1A6D65EE00257FF8 /* StandardButtonCreator.swift */,
 				2DD3C2361A549ADE00257FF8 /* CategorySelectViewController.swift */,
 				2DD3C2321A50EE7B00257FF8 /* CurrentStandingsViewController.swift */,
 				2DD3C2341A513ACF00257FF8 /* EndGameViewController.swift */,
@@ -281,6 +284,7 @@
 				2DD3C2311A50E9CF00257FF8 /* RebuttalViewController.swift in Sources */,
 				2DD3C24B1A6509B400257FF8 /* StandingsCell.swift in Sources */,
 				2DD3C2051A4DF2AE00257FF8 /* HomePageViewController.swift in Sources */,
+				2DD3C24D1A6D65EE00257FF8 /* StandardButtonCreator.swift in Sources */,
 				2DD3C2231A4DFB4500257FF8 /* RulesPageViewController.swift in Sources */,
 				2DD3C2031A4DF2AE00257FF8 /* AppDelegate.swift in Sources */,
 				2DD3C2291A4F3CD800257FF8 /* PhraseBank.swift in Sources */,
