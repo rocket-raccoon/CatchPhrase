@@ -44,6 +44,7 @@ class CurrentStandingsViewController: UIViewController, UICollectionViewDataSour
         headerLabel = UILabel(frame: CGRect())
         headerLabel.text = "Current Standings"
         headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        headerLabel.font = UIFont(name: headerLabel.font.fontName, size: 30.0)
         headerLabel.sizeToFit()
         view.addSubview(headerLabel)
         //Horizontally center the header label

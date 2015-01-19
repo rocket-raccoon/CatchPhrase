@@ -34,6 +34,7 @@ class EndGameViewController: UIViewController {
             winnerTextLabel.text = "It's a draw!"
         }
         winnerTextLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        winnerTextLabel.font = UIFont(name: winnerTextLabel.font.fontName, size: 30.0)
         winnerTextLabel.sizeToFit()
         view.addSubview(winnerTextLabel)
         //Center it horizontally

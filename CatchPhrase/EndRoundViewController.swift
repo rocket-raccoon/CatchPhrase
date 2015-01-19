@@ -30,9 +30,9 @@ class EndRoundViewController: UIViewController {
     
     func setupHeaderLabel() {
         //Create the header
-        var headerLabelFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        headerLabel = UILabel(frame: headerLabelFrame)
+        headerLabel = UILabel(frame: CGRect())
         headerLabel.text = "Which team scored?"
+        headerLabel.font = UIFont(name: headerLabel.font.fontName, size: 30.0)
         headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.addSubview(headerLabel)
         //Center the headerlabel horizontally

@@ -30,8 +30,9 @@ class RebuttalViewController: UIViewController {
     func setupHeaderLabel() {
         //Create the header
         headerLabel = UILabel(frame: CGRect())
-        headerLabel.text = "Was there a successful rebuttal?"
+        headerLabel.text = "Successful Rebuttal?"
         headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        headerLabel.font = UIFont(name: headerLabel.font.fontName, size: 30.0)
         view.addSubview(headerLabel)
         //Center the headerlabel horizontally
         let horizontalCenterConst = NSLayoutConstraint(item: headerLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
