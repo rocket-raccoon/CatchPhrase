@@ -26,7 +26,6 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
         //Put the new phrase on the screen
         let phrase = phraseBank.getNextPhrase()
         phraseLabel.text = phrase
-        phraseLabel.font = UIFont(name: phraseLabel.font.fontName, size: 20)
         //Start the countdown timer
         let filePath = NSBundle.mainBundle().pathForResource("countdown", ofType: ".mp3")
         let filePathUrl = NSURL(fileURLWithPath: filePath!)
@@ -54,9 +53,9 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
     
     func setupHeaderLabel() {
         //Create the header label
-        var headerLabelFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        headerLabel = UILabel(frame: headerLabelFrame)
+        headerLabel = UILabel(frame: CGRect())
         headerLabel.text = "Your phrase is:"
+        headerLabel.font = UIFont(name: headerLabel.font.fontName, size: 20.0)
         headerLabel.sizeToFit()
         headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.addSubview(headerLabel)
@@ -64,10 +63,11 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
     
     func setupPhraseLabel() {
         //Create the phrase label
-        var phraseLabelFrame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 500)
-        phraseLabel = UILabel(frame: phraseLabelFrame)
+        phraseLabel = UILabel(frame: CGRect())
         phraseLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         phraseLabel.textAlignment = NSTextAlignment.Center
+        phraseLabel.font = UIFont.boldSystemFontOfSize(45.0)
+        phraseLabel.sizeToFit()
         view.addSubview(phraseLabel)
         //Set width equal to screen width
         let widthConst = NSLayoutConstraint(item: phraseLabel, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 1.0, constant: 0.0)
@@ -102,7 +102,7 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
     func verticallyOrientViews() {
         //Vertically align header and phrase labels just below top of screen
         var labelsDictionary = ["headerLabel": headerLabel, "phraseLabel": phraseLabel]
-        var labelsVerticalConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-75-[headerLabel]-[phraseLabel]", options: nil, metrics: nil, views: labelsDictionary)
+        var labelsVerticalConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-75-[headerLabel]-75-[phraseLabel]", options: nil, metrics: nil, views: labelsDictionary)
         view.addConstraints(labelsVerticalConst)
         //Vertically align buttons just above bottom of screen
         var buttonsDictionary = ["pauseButton": pauseButton, "skipButton": skipButton, "nextButton": nextButton]
