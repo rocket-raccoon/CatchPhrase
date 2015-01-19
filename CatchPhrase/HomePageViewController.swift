@@ -37,8 +37,6 @@ class HomePageViewController: UIViewController {
         headerLabel.text = "Catch Phrase!"
         headerLabel.font = UIFont(name: headerLabel.font.fontName, size: 30)
         headerLabel.sizeToFit()
-        headerLabel.layer.borderColor = UIColor.blackColor().CGColor
-        headerLabel.layer.borderWidth = 1.0
         headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.addSubview(headerLabel)
         //Center it horizontally
