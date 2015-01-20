@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
+class GuessRoundViewController: InGameViewController, AVAudioPlayerDelegate {
     
     var phraseBank:PhraseBank!
     var scoreKeeper:ScoreKeeper!
@@ -45,10 +45,6 @@ class GuessRoundViewController: UIViewController, AVAudioPlayerDelegate {
         setupNextButton()
         horizontallyCenterViews([skipButton, nextButton, pauseButton, headerLabel])
         verticallyOrientViews()
-        //Disable the back button, add an exit game button
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        var b = UIBarButtonItem(title: "Exit Game", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("exitGame"))
-        self.navigationItem.rightBarButtonItem = b
     }
     
     func setupHeaderLabel() {

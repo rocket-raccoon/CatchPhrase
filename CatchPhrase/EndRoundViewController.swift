@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EndRoundViewController: UIViewController {
+class EndRoundViewController: InGameViewController {
     
     var headerLabel: UILabel!
     var teamOneButton: UIButton!
@@ -22,10 +22,6 @@ class EndRoundViewController: UIViewController {
         //Draw the views on the screen
         setupHeaderLabel()
         setupTeamSelectionButtons()
-        //Disable the back button, add an exit game button
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        var b = UIBarButtonItem(title: "Exit Game", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("exitGame"))
-        self.navigationItem.rightBarButtonItem = b
     }
     
     func setupHeaderLabel() {
@@ -59,10 +55,6 @@ class EndRoundViewController: UIViewController {
         //Vertically space buttons from bottom of screen
         let verticalSpaceConst = NSLayoutConstraint.constraintsWithVisualFormat("V:[teamOneButton]-[teamTwoButton]-30-|", options: nil, metrics: nil, views: ["teamOneButton": teamOneButton, "teamTwoButton": teamTwoButton])
         view.addConstraints(verticalSpaceConst)
-    }
-    
-    func exitGame() {
-        performSegueWithIdentifier("exitGame", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {

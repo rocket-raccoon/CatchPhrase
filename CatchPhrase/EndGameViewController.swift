@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EndGameViewController: UIViewController {
+class EndGameViewController: InGameViewController {
     
     var scoreKeeper:ScoreKeeper!
     var winnerTextLabel: UILabel!
@@ -19,8 +19,6 @@ class EndGameViewController: UIViewController {
         //Show the winner of the game
         displayWinner()
         createReturnHomeButton()
-        //Disable the back button, add an exit game button
-        self.navigationItem.setHidesBackButton(true, animated: false)
     }
     
     func displayWinner() {
@@ -54,11 +52,7 @@ class EndGameViewController: UIViewController {
         let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:[returnHomeButton]-30-|", options: nil, metrics: nil, views: ["returnHomeButton": returnHomeButton])
         view.addConstraints(verticalSpacingConst)
         //Add the action to return home
-        returnHomeButton.addTarget(self, action: Selector("returnHome"), forControlEvents: .TouchUpInside)
-    }
-    
-    func returnHome() {
-        navigationController?.popToRootViewControllerAnimated(false)
+        returnHomeButton.addTarget(self, action: Selector("exitGame"), forControlEvents: .TouchUpInside)
     }
     
     override func didReceiveMemoryWarning() {

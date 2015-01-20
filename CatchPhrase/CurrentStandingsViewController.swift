@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentStandingsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CurrentStandingsViewController: InGameViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var standingsCellWidth = [Int: CGFloat]()         //Holds the cell width for each section of the collection view
     var standingsCellHeight = CGFloat(0.0)           //Holds the cell height for every cell of the collection view
@@ -33,10 +33,6 @@ class CurrentStandingsViewController: UIViewController, UICollectionViewDataSour
         setupHeaderLabel()
         verticallyOrientHeaderAndGrid()
         setupButtons()
-        //Disable the back button, add an exit game button
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        var b = UIBarButtonItem(title: "Exit Game", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("exitGame"))
-        self.navigationItem.rightBarButtonItem = b
     }
     
     func setupHeaderLabel() {
@@ -110,10 +106,6 @@ class CurrentStandingsViewController: UIViewController, UICollectionViewDataSour
         var endGameVC = EndGameViewController()
         endGameVC.scoreKeeper = scoreKeeper
         navigationController?.pushViewController(endGameVC, animated: false)
-    }
-    
-    func exitGame() {
-        performSegueWithIdentifier("exitGame", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {
