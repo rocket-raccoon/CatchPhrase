@@ -1,0 +1,9 @@
+1)  Divide players into two teams.  Ideally, situate players in a circle where no player is next to another person on the same team.
+
+2)  Starting with any player, start the Catch Phrase game.  A screen will show up with a phrase along with a timer.  The goal is for the person holding the device to describe the phrase without using any words in the phrase and have a teammate guess the phrase.  If the team correctly guesses it, they pass device to the next person on the opposing team.
+
+3)  If the timer runs out, the opposing team of the person holding the device gains a point.
+
+4)  Additionally, the opposing team will have a chance to guess the phrase in what is called the rebuttal.  If they guess correctly, they gain an additional point.
+
+5)  This games continues indefinitely until you choose to end the game.  The team with the most points at the end of the game wins!

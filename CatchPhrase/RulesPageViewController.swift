@@ -9,10 +9,49 @@
 import UIKit
 
 class RulesPageViewController: UIViewController {
-
+    
+    var titleLabel: UILabel!
+    var summaryText: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        createTitle()
+        createRulesSummary()
+        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-75-[titleLabel]-[summaryText]", options: nil, metrics: nil, views: ["titleLabel": titleLabel, "summaryText": summaryText])
+        view.addConstraints(verticalSpacingConst)
+    }
+    
+    func createTitle() {
+        //Create the title label
+        titleLabel = UILabel(frame: CGRect())
+        titleLabel.text = "Rules Summary"
+        titleLabel.font = UIFont(name: titleLabel.font.fontName, size: 30.0)
+        titleLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        titleLabel.sizeToFit()
+        view.addSubview(titleLabel)
+        //Horizontally center title
+        let horizontalCenterConst = NSLayoutConstraint(item: titleLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(horizontalCenterConst)
+    }
+    
+    func createRulesSummary() {
+        //Create the rules summary text view by readining in the rules.txt file
+        let filePath = NSBundle.mainBundle().pathForResource("rules", ofType: ".txt")
+        let rulesSummaryText = String(contentsOfFile: filePath!, encoding: NSUTF8StringEncoding, error: nil)
+        summaryText = UITextView(frame: CGRect())
+        summaryText.text = rulesSummaryText
+        summaryText.setTranslatesAutoresizingMaskIntoConstraints(false)
+        summaryText.backgroundColor = .cyanColor()
+        view.addSubview(summaryText)
+        //Set the width proportional to screen width
+        let widthConst = NSLayoutConstraint(item: summaryText, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 0.8, constant: 0.0)
+        view.addConstraint(widthConst)
+        //Set height
+        let heightConst = NSLayoutConstraint(item: summaryText, attribute: .Height, relatedBy: .Equal, toItem: view, attribute: .Height, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(heightConst)
+        //Horizontally center the text
+        let horizontalCenterConst = NSLayoutConstraint(item: summaryText, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(horizontalCenterConst)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -21,18 +60,6 @@ class RulesPageViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

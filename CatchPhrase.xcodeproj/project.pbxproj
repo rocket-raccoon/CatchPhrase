@@ -32,6 +32,7 @@
 		2DD3C2471A54C35C00257FF8 /* Easy.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C23F1A54C35C00257FF8 /* Easy.txt */; };
 		2DD3C24B1A6509B400257FF8 /* StandingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C24A1A6509B400257FF8 /* StandingsCell.swift */; };
 		2DD3C24D1A6D65EE00257FF8 /* StandardButtonCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3C24C1A6D65EE00257FF8 /* StandardButtonCreator.swift */; };
+		2DD3C24F1A6DD9F200257FF8 /* rules.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DD3C24E1A6DD9F200257FF8 /* rules.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		2DD3C23F1A54C35C00257FF8 /* Easy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Easy.txt; sourceTree = "<group>"; };
 		2DD3C24A1A6509B400257FF8 /* StandingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandingsCell.swift; path = ../StandingsCell.swift; sourceTree = "<group>"; };
 		2DD3C24C1A6D65EE00257FF8 /* StandardButtonCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardButtonCreator.swift; sourceTree = "<group>"; };
+		2DD3C24E1A6DD9F200257FF8 /* rules.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rules.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		2DD3C2001A4DF2AE00257FF8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DD3C24E1A6DD9F200257FF8 /* rules.txt */,
 				2DD3C2381A54C35C00257FF8 /* Travel.txt */,
 				2DD3C2391A54C35C00257FF8 /* People.txt */,
 				2DD3C23A1A54C35C00257FF8 /* Household Items.txt */,
@@ -255,6 +258,7 @@
 				2DD3C2411A54C35C00257FF8 /* People.txt in Resources */,
 				2DD3C2461A54C35C00257FF8 /* Medium.txt in Resources */,
 				2DD3C2451A54C35C00257FF8 /* Hard.txt in Resources */,
+				2DD3C24F1A6DD9F200257FF8 /* rules.txt in Resources */,
 				2DD3C20D1A4DF2AE00257FF8 /* LaunchScreen.xib in Resources */,
 				2DD3C2471A54C35C00257FF8 /* Easy.txt in Resources */,
 				2DD3C2431A54C35C00257FF8 /* Food.txt in Resources */,
