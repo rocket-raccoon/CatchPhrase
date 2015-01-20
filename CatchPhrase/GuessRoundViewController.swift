@@ -15,6 +15,7 @@ class GuessRoundViewController: InGameViewController, AVAudioPlayerDelegate {
     var scoreKeeper:ScoreKeeper!
     var audioPlayer:AVAudioPlayer!
     
+    var skipsLabel: UILabel!
     var headerLabel: UILabel!
     var phraseLabel: UILabel!
     var pauseButton: UIButton!
@@ -43,8 +44,26 @@ class GuessRoundViewController: InGameViewController, AVAudioPlayerDelegate {
         setupPauseButton()
         setupSkipButton()
         setupNextButton()
+        createTooManySkipsLabel()
         horizontallyCenterViews([skipButton, nextButton, pauseButton, headerLabel])
         verticallyOrientViews()
+    }
+    
+    func createTooManySkipsLabel() {
+        //Create a message saying all the skips have been used up
+        skipsLabel = UILabel(frame: CGRect())
+        skipsLabel.text = "No more skips left!"
+        skipsLabel.textColor = .redColor()
+        skipsLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        skipsLabel.sizeToFit()
+        skipsLabel.hidden = true
+        view.addSubview(skipsLabel)
+        //Center it horizontally
+        let horizontalCenterConst = NSLayoutConstraint(item: skipsLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(horizontalCenterConst)
+        //Center it vertically as well
+        let verticalCenterConst = NSLayoutConstraint(item: skipsLabel, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(verticalCenterConst)
     }
     
     func setupHeaderLabel() {
@@ -138,8 +157,17 @@ class GuessRoundViewController: InGameViewController, AVAudioPlayerDelegate {
             phraseLabel.text = phrase
             scoreKeeper.curSkips += 1
         } else {
-            println("No more skips for this round")
+            //If the too many skips warning is visible, don't do anything
+            //Otherwise, make it visible and set a timer to make it not visible after 2 seconds
+            if skipsLabel.hidden == true {
+                skipsLabel.hidden = false
+                var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("removeSkipWarning"), userInfo: nil, repeats: false)
+            }
         }
+    }
+    
+    func removeSkipWarning() {
+        skipsLabel.hidden = true
     }
     
     func nextPhrase() {
