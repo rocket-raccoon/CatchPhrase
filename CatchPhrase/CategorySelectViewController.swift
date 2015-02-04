@@ -64,6 +64,15 @@ class CategorySelectViewController: UIViewController, UIPickerViewDataSource, UI
         //Position it just below the header label
         let justBelowLabelConst = NSLayoutConstraint(item: categoryPicker, attribute: .Top, relatedBy: .Equal, toItem: headerLabel, attribute: .Bottom, multiplier: 0.0, constant: 100)
         view.addConstraint(justBelowLabelConst)
+        //Set the width equal to screen width
+        let widthConst = NSLayoutConstraint(item: categoryPicker, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(widthConst)
+        //Set height proportional to screen height
+        let heightConst = NSLayoutConstraint(item: categoryPicker, attribute: .Height, relatedBy: .Equal, toItem: view, attribute: .Height, multiplier: 0.50, constant: 0.0)
+        view.addConstraint(heightConst)
+        //Center the category picker vertically
+        let verticalCenterConst = NSLayoutConstraint(item: categoryPicker, attribute: .CenterY, relatedBy: .Equal, toItem: view, attribute: .CenterY, multiplier: 1.0, constant: 0.0)
+        view.addConstraint(verticalCenterConst)
     }
     
     func startGame() {
