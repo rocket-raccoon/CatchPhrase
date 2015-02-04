@@ -54,8 +54,11 @@ class GuessRoundViewController: InGameViewController, AVAudioPlayerDelegate {
         skipsLabel = UILabel(frame: CGRect())
         skipsLabel.text = "No more skips left!"
         skipsLabel.textColor = .redColor()
+        skipsLabel.backgroundColor = .whiteColor()
         skipsLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         skipsLabel.sizeToFit()
+        skipsLabel.layer.masksToBounds = true
+        skipsLabel.layer.cornerRadius = 8
         skipsLabel.hidden = true
         view.addSubview(skipsLabel)
         //Center it horizontally

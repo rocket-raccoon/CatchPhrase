@@ -15,7 +15,7 @@ class StandardButtonCreator {
         //Create a standard button
         var button = UIButton(frame: CGRect())
         button.setTitle(buttonTitle, forState: .Normal)
-        button.backgroundColor = UIColor.blueColor()
+        button.backgroundColor = .blueColor()
         button.setTranslatesAutoresizingMaskIntoConstraints(false)
         button.layer.cornerRadius = 10
         enclosingView.addSubview(button)
