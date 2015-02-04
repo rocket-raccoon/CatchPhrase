@@ -39,7 +39,7 @@ class EndGameViewController: InGameViewController {
         let horizontalCenterConst = NSLayoutConstraint(item: winnerTextLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
         view.addConstraint(horizontalCenterConst)
         //Vertically space it right below top of screen
-        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-75-[winnerTextLabel]", options: nil, metrics: nil, views: ["winnerTextLabel": winnerTextLabel])
+        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:[topLayoutGuide]-[winnerTextLabel]", options: nil, metrics: nil, views: ["winnerTextLabel": winnerTextLabel, "topLayoutGuide": topLayoutGuide])
         view.addConstraints(verticalSpacingConst)
     }
     

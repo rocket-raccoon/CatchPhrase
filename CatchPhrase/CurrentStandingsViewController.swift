@@ -49,8 +49,8 @@ class CurrentStandingsViewController: InGameViewController, UICollectionViewData
     }
     
     func verticallyOrientHeaderAndGrid() {
-        let viewDictionary = ["headerLabel": headerLabel, "standingsGrid": standingsGrid]
-        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-75-[headerLabel]-[standingsGrid]", options: nil, metrics: nil, views: viewDictionary)
+        let viewDictionary = ["headerLabel": headerLabel, "standingsGrid": standingsGrid, "topLayoutGuide": topLayoutGuide]
+        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|[topLayoutGuide]-[headerLabel]-[standingsGrid]", options: nil, metrics: nil, views: viewDictionary)
         view.addConstraints(verticalSpacingConst)
     }
     

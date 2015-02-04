@@ -119,10 +119,10 @@
 		2DD3C1FF1A4DF2AE00257FF8 /* CatchPhrase */ = {
 			isa = PBXGroup;
 			children = (
-				2DD3C2541A6E05C300257FF8 /* InGameViewController.swift */,
-				2DD3C2531A6E01A200257FF8 /* models */,
 				2DD3C2501A6DFEA800257FF8 /* utilities */,
+				2DD3C2531A6E01A200257FF8 /* models */,
 				2DD3C2021A4DF2AE00257FF8 /* AppDelegate.swift */,
+				2DD3C2541A6E05C300257FF8 /* InGameViewController.swift */,
 				2DD3C2041A4DF2AE00257FF8 /* HomePageViewController.swift */,
 				2DD3C2361A549ADE00257FF8 /* CategorySelectViewController.swift */,
 				2DD3C2321A50EE7B00257FF8 /* CurrentStandingsViewController.swift */,

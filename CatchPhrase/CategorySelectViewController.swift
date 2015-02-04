@@ -34,9 +34,9 @@ class CategorySelectViewController: UIViewController, UIPickerViewDataSource, UI
         headerLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.addSubview(headerLabel)
         //Set the constraints for the header label
-        let viewDictionary = ["view": view, "headerLabel": headerLabel]
+        let viewDictionary = ["view": view, "headerLabel": headerLabel, "topLayoutGuide": topLayoutGuide]
         let horizontalCenterConst = NSLayoutConstraint(item: headerLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1, constant: 0)
-        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-75-[headerLabel]", options: nil, metrics: nil, views: viewDictionary)
+        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:[topLayoutGuide]-[headerLabel]", options: nil, metrics: nil, views: viewDictionary)
         view.addConstraint(horizontalCenterConst)
         view.addConstraints(verticalSpacingConst)
     }

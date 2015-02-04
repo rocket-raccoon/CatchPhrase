@@ -43,7 +43,7 @@ class HomePageViewController: UIViewController {
         var horizontalCenterConst = NSLayoutConstraint(item: headerLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
         view.addConstraint(horizontalCenterConst)
         //Place it just below the superview top
-        var verticalPlacementConst = NSLayoutConstraint(item: headerLabel, attribute: NSLayoutAttribute.Top, relatedBy: .Equal, toItem: view, attribute: .Top, multiplier: 1.0, constant: 100)
+        var verticalPlacementConst = NSLayoutConstraint(item: headerLabel, attribute: NSLayoutAttribute.Top, relatedBy: .Equal, toItem: topLayoutGuide, attribute: .Bottom, multiplier: 1.0, constant: 10)
         view.addConstraint(verticalPlacementConst)
     }
     

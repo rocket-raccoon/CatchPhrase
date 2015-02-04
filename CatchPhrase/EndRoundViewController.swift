@@ -35,7 +35,7 @@ class EndRoundViewController: InGameViewController {
         let horizontalCenterConst = NSLayoutConstraint(item: headerLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
         view.addConstraint(horizontalCenterConst)
         //Place header just below top of screen
-        let verticalSpaceConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-75-[headerLabel]", options: nil, metrics: nil, views: ["headerLabel": headerLabel])
+        let verticalSpaceConst = NSLayoutConstraint.constraintsWithVisualFormat("V:[topLayoutGuide]-[headerLabel]", options: nil, metrics: nil, views: ["headerLabel": headerLabel, "topLayoutGuide": topLayoutGuide])
         view.addConstraints(verticalSpaceConst)
     }
     

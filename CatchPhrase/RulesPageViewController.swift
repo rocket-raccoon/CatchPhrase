@@ -17,7 +17,7 @@ class RulesPageViewController: UIViewController {
         super.viewDidLoad()
         createTitle()
         createRulesSummary()
-        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-75-[titleLabel]-[summaryText]", options: nil, metrics: nil, views: ["titleLabel": titleLabel, "summaryText": summaryText])
+        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:[topLayoutGuide]-[titleLabel]-[summaryText]", options: nil, metrics: nil, views: ["titleLabel": titleLabel, "topLayoutGuide": topLayoutGuide, "summaryText": summaryText])
         view.addConstraints(verticalSpacingConst)
     }
     
