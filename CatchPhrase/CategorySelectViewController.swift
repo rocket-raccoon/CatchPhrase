@@ -61,9 +61,6 @@ class CategorySelectViewController: UIViewController, UIPickerViewDataSource, UI
         categoryPicker.dataSource = self
         categoryPicker.setTranslatesAutoresizingMaskIntoConstraints(false)
         view.addSubview(categoryPicker)
-        //Position it just below the header label
-        let justBelowLabelConst = NSLayoutConstraint(item: categoryPicker, attribute: .Top, relatedBy: .Equal, toItem: headerLabel, attribute: .Bottom, multiplier: 0.0, constant: 100)
-        view.addConstraint(justBelowLabelConst)
         //Set the width equal to screen width
         let widthConst = NSLayoutConstraint(item: categoryPicker, attribute: .Width, relatedBy: .Equal, toItem: view, attribute: .Width, multiplier: 1.0, constant: 0.0)
         view.addConstraint(widthConst)

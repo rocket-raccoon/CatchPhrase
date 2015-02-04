@@ -117,7 +117,7 @@ class GuessRoundViewController: InGameViewController, AVAudioPlayerDelegate {
     func verticallyOrientViews() {
         //Vertically align header and phrase labels just below top of screen
         var labelsDictionary = ["headerLabel": headerLabel, "phraseLabel": phraseLabel, "topLayoutGuide": topLayoutGuide]
-        var labelsVerticalConst = NSLayoutConstraint.constraintsWithVisualFormat("V:[topLayoutGuide]-[headerLabel]-75-[phraseLabel]", options: nil, metrics: nil, views: labelsDictionary)
+        var labelsVerticalConst = NSLayoutConstraint.constraintsWithVisualFormat("V:[topLayoutGuide]-[headerLabel]-[phraseLabel]", options: nil, metrics: nil, views: labelsDictionary)
         view.addConstraints(labelsVerticalConst)
         //Vertically align buttons just above bottom of screen
         var buttonsDictionary = ["pauseButton": pauseButton, "skipButton": skipButton, "nextButton": nextButton]
