@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentStandingsViewController: InGameViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CurrentStandingsViewController: InGameViewController, UITableViewDataSource, UITableViewDelegate {
     
     var standingsCellWidth = [Int: CGFloat]()         //Holds the cell width for each section of the collection view
     var standingsCellHeight = CGFloat(0.0)           //Holds the cell height for every cell of the collection view
@@ -20,6 +20,13 @@ class CurrentStandingsViewController: InGameViewController, UICollectionViewData
     var headerLabel: UILabel!
     var continueButton: UIButton!
     var endGameButton: UIButton!
+    var standingsTableView: UITableView!
+    
+    var standingsTableViewHeightConst: NSLayoutConstraint!
+    
+    private struct Constants {
+        static let CellReuseID = "Cell Reuse Identifier"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +35,8 @@ class CurrentStandingsViewController: InGameViewController, UICollectionViewData
         labels[1][1] = String(scoreKeeper.team2Score)
         labels[2][1] = String(scoreKeeper.currentRound)
         //Setup the views on the screen
-        precalculateCellSizes()
-        setupStandingsGrid()
         setupHeaderLabel()
-        verticallyOrientHeaderAndGrid()
+        setupStandingsGrid()
         setupButtons()
     }
     
@@ -46,12 +51,6 @@ class CurrentStandingsViewController: InGameViewController, UICollectionViewData
         //Horizontally center the header label
         let horizontalCenterConst = NSLayoutConstraint(item: headerLabel, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
         view.addConstraint(horizontalCenterConst)
-    }
-    
-    func verticallyOrientHeaderAndGrid() {
-        let viewDictionary = ["headerLabel": headerLabel, "standingsGrid": standingsGrid, "topLayoutGuide": topLayoutGuide]
-        let verticalSpacingConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|[topLayoutGuide]-[headerLabel]-[standingsGrid]", options: nil, metrics: nil, views: viewDictionary)
-        view.addConstraints(verticalSpacingConst)
     }
     
     func setupButtons() {
@@ -73,26 +72,51 @@ class CurrentStandingsViewController: InGameViewController, UICollectionViewData
     }
     
     func setupStandingsGrid() {
-        //Create the standings grid or table
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.minimumInteritemSpacing = 10
-        layout.estimatedItemSize = CGSize(width: 50, height: 50)
-        standingsGrid = UICollectionView(frame: CGRect(x: 0, y: 0, width: 200, height: 200), collectionViewLayout: layout)
-        standingsGrid.registerClass(StandingsCell.self, forCellWithReuseIdentifier: "cell")
-        standingsGrid.delegate = self
-        standingsGrid.dataSource = self
-        standingsGrid.setTranslatesAutoresizingMaskIntoConstraints(false)
-        standingsGrid.sizeToFit()
-        view.addSubview(standingsGrid)
-        //Horizontally center it
-        let horizontalCenterConst = NSLayoutConstraint(item: standingsGrid, attribute: .CenterX, relatedBy: .Equal, toItem: view, attribute: .CenterX, multiplier: 1.0, constant: 0.0)
-        view.addConstraint(horizontalCenterConst)
-        //Set the height and width constraints
-        let heightConst = NSLayoutConstraint(item: standingsGrid, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 0.0, constant: 200)
-        let widthConst = NSLayoutConstraint(item: standingsGrid, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 0.0, constant: 200)
-        view.addConstraint(heightConst)
-        view.addConstraint(widthConst)
+        
+        //Instantiate an instance of the table view to hold our standings
+        standingsTableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
+        standingsTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        standingsTableView.registerClass(StandingsTableViewCell.self, forCellReuseIdentifier: Constants.CellReuseID)
+        standingsTableView.estimatedRowHeight = standingsTableView.rowHeight
+        standingsTableView.rowHeight = UITableViewAutomaticDimension
+        standingsTableView.contentInset = UIEdgeInsetsZero
+        standingsTableView.scrollEnabled = false
+        standingsTableView.delegate = self
+        standingsTableView.dataSource = self
+        view.addSubview(standingsTableView)
+        
+        //Set the vertical constraints in autolayout
+        let viewsDictionary = ["standingsTableView": standingsTableView, "tlg": topLayoutGuide, "headerLabel": headerLabel]
+        let verticalConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[tlg]-[headerLabel]-[standingsTableView]", options: nil, metrics: nil, views: viewsDictionary)
+        view.addConstraints(verticalConst)
+        
+        //Set the horizontal constants in autolayout
+        let horizontalConst = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[standingsTableView]-|", options: nil, metrics: nil, views: viewsDictionary)
+        view.addConstraints(horizontalConst)
+        
+        //Set height constraint
+        standingsTableViewHeightConst = NSLayoutConstraint(item: standingsTableView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 0.0, constant: 500)
+        view.addConstraint(standingsTableViewHeightConst)
+        
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return labels.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CellReuseID) as StandingsTableViewCell
+        cell.rowInformation = labels[indexPath.row]
+        standingsTableViewHeightConst.constant = standingsTableView.contentSize.height
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
     }
     
     //Returns us to another round of CatchPhrase
@@ -108,72 +132,64 @@ class CurrentStandingsViewController: InGameViewController, UICollectionViewData
         navigationController?.pushViewController(endGameVC, animated: false)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+}
+
+class StandingsTableViewCell: UITableViewCell {
     
-    //We want to iterate over each cell in the collection view to determine what
-    //the tallest cell is overall as well as the widest cell per column
-    func precalculateCellSizes() {
-        let numRows = labels.count
-        let numCols = labels[0].count
-        for i in 0...(numRows-1) {
-            for j in 0...(numCols-1) {
-                var textLabel = UILabel(frame: CGRect())
-                textLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-                textLabel.text = labels[i][j]
-                textLabel.sizeToFit()
-                let cellWidth = textLabel.frame.width
-                let cellHeight = textLabel.frame.height
-                if cellHeight > standingsCellHeight {
-                    standingsCellHeight = cellHeight
-                }
-                if let curStandingsCellWidth = standingsCellWidth[j] {
-                    if cellWidth > curStandingsCellWidth {
-                        standingsCellWidth[j] = cellWidth
-                    }
-                } else {
-                    standingsCellWidth[j] = cellWidth
-                }
-            }
+    var categoryLabel: UILabel!
+    var scoreLabel: UILabel!
+    var rowInformation: [String]! {
+        didSet {
+            updateUI()
         }
     }
     
-    func getSizeForStandingsCell(indexPath: NSIndexPath) -> CGSize {
-        let section = indexPath.section
-        let row = indexPath.row
-        var textLabel = UILabel(frame: CGRect())
-        textLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
-        textLabel.text = labels[section][row]
-        textLabel.sizeToFit()
-        return textLabel.frame.size
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        createCell()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let w = standingsCellWidth[indexPath.row]
-        let h = standingsCellHeight
-        return CGSizeMake(w!, h)
+    func createCell() {
+        
+        //Create the category label that goes on the left
+        categoryLabel = UILabel()
+        categoryLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        contentView.addSubview(categoryLabel)
+        
+        //Create the score label that goes on the right
+        scoreLabel = UILabel()
+        scoreLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        contentView.addSubview(scoreLabel)
+        
+        //Set the labels horizontal constraints
+        let viewsDictionary = ["scoreLabel": scoreLabel, "categoryLabel": categoryLabel]
+        let horizontalConst = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[categoryLabel]-[scoreLabel]-|", options: nil, metrics: nil, views: viewsDictionary)
+        contentView.addConstraints(horizontalConst)
+        
+        //Set the labels vertical constraints
+        let categoryVerticalConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[categoryLabel]-|", options: nil, metrics: nil, views: viewsDictionary)
+        contentView.addConstraints(categoryVerticalConst)
+        let scoreVerticalConst = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[scoreLabel]-|", options: nil, metrics: nil, views: viewsDictionary)
+        contentView.addConstraints(scoreVerticalConst)
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return labels.count
+    func updateUI() {
+        if rowInformation != nil {
+            categoryLabel?.text = rowInformation[0]
+            scoreLabel?.text = rowInformation[1]
+        }
     }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return labels[section].count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let section = indexPath.section
-        let row = indexPath.row
-        var cell = standingsGrid.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as StandingsCell
-        cell.backgroundColor = UIColor.whiteColor()
-        cell.textLabel.text = labels[section][row]
-        cell.textLabel.sizeToFit()
-        return cell
-    }
-    
 }
+
+
+
+
+
+
 
 
 
